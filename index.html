@@ -367,7 +367,9 @@ function newState(side){
     neg8:{done:false,n:0,round:0,offer:null,press:{shen:0,chiang:0}},
     debates:[], prep:0, debateLog:[],
     leaveTi:T(26), plan:null, news:[], pending:[], aiNews:[],
-    acctTi:{shen:2+Math.floor(Math.random()*2),chiang:1+Math.floor(Math.random()*2)}
+    acctTi:{shen:2+Math.floor(Math.random()*2),chiang:1+Math.floor(Math.random()*2)},
+    evShift:Object.fromEntries(POOL.map(id=>[id,Math.floor(Math.random()*9)-4])),
+    evSkip:POOL.filter(()=>Math.random()<.25)
   };
 }
 const ME=()=>S.sides[S.me], OP=()=>S.sides[S.op];
@@ -394,6 +396,29 @@ function slotsFor(k,ti){
   else n=k==="shen"?12:(ti>=S.leaveTi?14:8);
   const H=S.sides[k];if(H.halfTo!==undefined&&ti>=H.halfFrom&&ti<=H.halfTo)n=Math.floor(n/2);
   return Math.max(0,n-S.sides[k].pen);
+}
+function winOf(id){
+  const e=EV[id];if(!e||!e.win)return null;if(e.late||!e.pool)return e.win;
+  const s=(S.evShift&&S.evShift[id])||0;return [Math.max(0,e.win[0]+s),Math.min(LAST-1,e.win[1]+s)];
+}
+/* 虛構事件的數值浮動：幅度隨機，局勢不利時好事可能變壞事，局勢順風時壞事可能變好事 */
+function varyFx(fx){
+  const X=ME(),m=momentum(S.me);
+  const head=clamp(Math.max(0,-m)*.6+Math.max(0,(45-X.mor)/45)*.4,0,1);
+  const tail=clamp(Math.max(0,m)*.7+Math.max(0,(X.mor-75)/25)*.3,0,1);
+  const pBad=.05+.22*head,pGood=.05+.22*tail;
+  const out=Object.assign({},fx);let bad=0,good=0;
+  const one=(k,v)=>{
+    let nv=v*(.5+R());
+    const isGood=k==="ant"?v<0:v>0;
+    if(isGood&&R()<pBad){nv=-Math.abs(nv)*.6*(k==="ant"?-1:1);bad++;}
+    else if(!isGood&&R()<pGood){nv=Math.abs(nv)*.6*(k==="ant"?-1:1);good++;}
+    return Math.round(nv*10)/10;
+  };
+  for(const k of ["mob","mid","ant","mor","agenda","shift","opMob","opMid"])if(typeof out[k]==="number"&&out[k]!==0)out[k]=one(k,out[k]);
+  if(out.dshift)out.dshift={i:out.dshift.i,v:one("shift",out.dshift.v)};
+  const note=bad?"局勢不利，這個決定的效果走了樣。":good?"局勢順風，原本的副作用反而變成助力。":"";
+  return {fx:out,note};
 }
 function halfNote(){
   const X=ME();
@@ -824,12 +849,13 @@ function showEvent(id,done){
     if(c.neg)S.neg++;
     if(c.flag)S.flags.add(c.flag);
     if(c.half||ev.half){const X=ME(),day=TURNS[S.ti].k==="day";X.halfFrom=S.ti+1;X.halfTo=day?Math.min(LAST-1,S.ti+7):S.ti+1;}
-    let out=applyFx(c.fx,S.me);let msg=c.log||"";
+    const fic=["fiction","common","ai"].includes(ev.tag);let vnote="";const V=f=>{if(!fic||!f)return f;const r=varyFx(f);if(r.note)vnote=r.note;return r.fx};
+    let out=applyFx(V(c.fx),S.me);let msg=c.log||"";
     if(c.then)S.queue.push({ti:S.ti+c.then.in,id:c.then.id});
-    if(c.rand){let r=R(),o=c.rand[c.rand.length-1];for(const x of c.rand){if((r-=x.p)<0){o=x;break}}out=out.concat(applyFx(o.fx,S.me));msg=o.log||msg;if(o.then)S.queue.push({ti:S.ti+o.then.in,id:o.then.id});if(o.back)S.negBack++;}
+    if(c.rand){let r=R(),o=c.rand[c.rand.length-1];for(const x of c.rand){if((r-=x.p)<0){o=x;break}}out=out.concat(applyFx(V(o.fx),S.me));msg=o.log||msg;if(o.then)S.queue.push({ti:S.ti+o.then.in,id:o.then.id});if(o.back)S.negBack++;}
     if(timeout)S.timeouts=(S.timeouts||0)+1;
-    addLog(`${ev.title}：${timeout?"時間到，":""}${c.t}${msg?"。"+msg:""}`);
-    openCard(`<span class="tag ${ev.tag}">${tagName(ev.tag)}</span><h3 id="ctitle">${esc(ev.title)}</h3>${timeout?'<p><b style="color:var(--alert)">時間到，團隊沒有做出決定。</b></p>':""}<p><b>${esc(c.t)}</b></p>${msg?`<p>${esc(msg)}</p>`:""}${deltaHTML(out)||'<p class="delta">沒有立即的變化。</p>'}${c.then?'<p class="delta">這個決定之後可能還會有後續。</p>':""}<div class="choices"><button class="primary" id="cont">繼續</button></div>`);
+    addLog(`${ev.title}：${timeout?"時間到，":""}${c.t}${msg?"。"+msg:""}${vnote?"（"+vnote+"）":""}`);
+    openCard(`<span class="tag ${ev.tag}">${tagName(ev.tag)}</span><h3 id="ctitle">${esc(ev.title)}</h3>${timeout?'<p><b style="color:var(--alert)">時間到，團隊沒有做出決定。</b></p>':""}<p><b>${esc(c.t)}</b></p>${msg?`<p>${esc(msg)}</p>`:""}${vnote?`<p style="color:var(--alert)"><b>${esc(vnote)}</b></p>`:""}${deltaHTML(out)||'<p class="delta">沒有立即的變化。</p>'}${c.then?'<p class="delta">這個決定之後可能還會有後續。</p>':""}<div class="choices"><button class="primary" id="cont">繼續</button></div>`);
     if(ev.actor===S.me){oppAuto(ev);renderNews();}
     $("#cont").onclick=()=>{closeCard();renderInds();renderBar();renderPlan();done();};
   };
@@ -937,12 +963,12 @@ function startTurn(){
     S.pending.push("vote");
   } else if(t.k==="day"){
     // 最後兩週：每天至少兩張，三成機率三張
-    const n=2+(R()<.3?1:0);S.lastUse=S.lastUse||{};
+    const n=2+(R()<.35?1:0)+(R()<.1?1:0);S.lastUse=S.lastUse||{};
     for(let j=0;j<n;j++){
       const ok=POOL.concat(LATE_POOL).filter(id=>{const e=EV[id];if(S.pending.some(p=>p===id||p.startsWith(id+"_")))return false;
         if(e.rep){if(S.lastUse[id]!==undefined&&S.ti-S.lastUse[id]<(e.cd||3))return false;}else if(S.used.has(id))return false;
-        if(e.late&&e.win&&(S.ti<e.win[0]||S.ti>e.win[1]))return false;
-        if(!e.late&&e.win&&(S.ti<e.win[0]||S.ti>e.win[1]))return false;
+        if(S.evSkip.includes(id))return false;
+        {const wv=winOf(id);if(wv&&(S.ti<wv[0]||S.ti>wv[1]))return false;}
         if(e.cond&&!e.cond())return false;return true});
       if(!ok.length)LATE_POOL.filter(id=>EV[id].rep&&!S.pending.some(p=>p.startsWith(id))).forEach(id=>ok.push(id));
       if(!ok.length)break;
@@ -951,13 +977,15 @@ function startTurn(){
       S.pending.push(instantiate(id));
     }
   } else {
-    const late=S.ti>=T(20);let n=R()<(late?.55:.3)?2:1;
-    n=Math.max(0,Math.min(n,3-S.pending.length));
+    const L0=likely(),close=Math.abs(L0.s-L0.c)<10,ph=S.ti<T(10)?0:S.ti<T(20)?1:2;
+    const PR=[[.3,.5,.2,0],[.15,.45,.32,.08],[.05,.35,.4,.2]][ph];let rr=R(),n=0;for(;n<3;n++){if((rr-=PR[n])<0)break}
+    if(close&&R()<.3)n++;
+    n=Math.max(0,Math.min(n,4-S.pending.length));
     for(let j=0;j<n;j++){
-      const ok=POOL.filter(id=>{const e=EV[id];if(S.used.has(id))return false;if(e.win&&(S.ti<e.win[0]||S.ti>e.win[1]))return false;if(e.cond&&!e.cond())return false;return true});
-      if(!ok.length)break;
+      const ok=POOL.filter(id=>{const e=EV[id];if(S.used.has(id)||S.evSkip.includes(id))return false;{const wv=winOf(id);if(wv&&(S.ti<wv[0]||S.ti>wv[1]))return false;}if(e.cond&&!e.cond())return false;return true});
+      if(ok.length<2&&S.ti>=T(19)){S.lastUse=S.lastUse||{};LATE_POOL.filter(id=>EV[id].rep&&!S.pending.some(p=>p.startsWith(id))&&(S.lastUse[id]===undefined||S.ti-S.lastUse[id]>=2)).forEach(id=>ok.push(id));}      if(!ok.length)break;
       const wts=ok.map(id=>(EV[id].w&&EV[id].w[S.me])||1);let r=R()*wts.reduce((a,b)=>a+b,0),i=0;for(;i<ok.length-1;i++){if((r-=wts[i])<0)break}
-      S.used.add(ok[i]);S.pending.push(ok[i]);
+      if(EV[ok[i]].rep){S.lastUse[ok[i]]=S.ti;S.pending.push(instantiate(ok[i]));}else{S.used.add(ok[i]);S.pending.push(ok[i]);}
     }
   }
   aiReact();
