@@ -392,7 +392,14 @@ function slotsFor(k,ti){
   const t=TURNS[ti];let n;
   if(t.k==="day") n=(k==="chiang"&&ti<S.leaveTi)?1:2;
   else n=k==="shen"?12:(ti>=S.leaveTi?14:8);
+  const H=S.sides[k];if(H.halfTo!==undefined&&ti>=H.halfFrom&&ti<=H.halfTo)n=Math.floor(n/2);
   return Math.max(0,n-S.sides[k].pen);
+}
+function halfNote(){
+  const X=ME();
+  if(X.halfTo!==undefined&&S.ti>=X.halfFrom&&S.ti<=X.halfTo)return '<div style="color:var(--alert);font-size:.85rem;font-weight:700;width:100%">候選人累倒休養中，行程格數減半</div>';
+  if((S.fatigue||0)>=2)return '<div style="color:var(--alert);font-size:.85rem;width:100%">候選人已經連續操了好一陣子，再不安排休息可能會累倒</div>';
+  return "";
 }
 function histGap(ti){ // expected shen-chiang likely gap following history
   const w=Math.min(ti+1,23);if(w<=3)return -28;return -28+(w-3)*(20/20);
@@ -582,6 +589,57 @@ infight:{pool:1,cond:()=>S.lastPollGap!==null&&S.lastPollGap*sgn(S.me)<-10,tag:"
 votebuy:{pool:1,win:[D(11,18),D(11,26)],tag:"rule",title:"走路工傳聞",text:"地方傳出走路工傳聞，指向你們這一方的樁腳。",
   src:"刑法與選罷法對賄選設有刑責，檢方選前會成立查察小組。",
   choices:{both:[{t:"公開要求檢調查辦，與相關人切割",fx:{mid:2,mor:-2}},{t:"私下處理",rand:[{p:.5,fx:{mid:-8,mor:-4},log:"傳聞被媒體證實，成為選前最後一週的頭條。"},{p:.5,fx:{},log:"傳聞沒有延燒。"}]}]}},
+collapse:{tag:"common",half:1,title:"候選人累倒",
+  text:"連續好幾週幾乎沒有休息，候選人今天在行程中頭暈不適，被送往醫院。醫生要求至少休養一週：接下來一週的行程格數減半。",
+  choices:{both:[
+    {t:"公開說明病況，安心休養",fx:{mid:2,mor:-2},half:1},
+    {t:"低調處理，對外說是行程調整",half:1,rand:[{p:.4,fx:{mid:-3},log:"媒體拍到候選人進出醫院，被質疑隱瞒。"},{p:.6,fx:{},log:"沒有被外界發現。"}]},
+    {t:"請副手與大咖代打行程",need:()=>ME().fav>=1,fx:{fav:-1,mob:2},half:1}
+  ]}},
+/* ---------- 民眾黨與小黨聯盟 ---------- */
+tppPact:{at:T(11),actor:"ext",tag:"real",title:"藍白合作協議",
+  text:{chiang:"國民黨依藍白合作協議「現任優先」原則完成提名。民眾黨在台北傾向支持你們，但要走多近？",shen:"藍白合作協議下，民眾黨在台北傾向支持對手。但民眾黨支持者裡，也有人對藍白合不滿。"},
+  src:"報導：國民黨7/22中常會說明，依藍白兩黨簽署的2026年聯合治理暨地方選舉合作協議，共同推舉以現任者優先為原則。TVBS 5月民調顧示民眾黨認同者約9成支持蔣萬安。",
+  choices:{
+    chiang:[{t:"邀民眾黨市議員參選人同台",fx:{shift:.6,mob:2,mid:-1}},{t:"保持距離，主打跨黨派市政",fx:{mid:2}},{t:"要求民眾黨正式表態助選",need:()=>ME().fav>=1,fx:{fav:-1,shift:.9,ant:2}}],
+    shen:[{t:"爭取對藍白合不滿的白營選民",fx:{mid:2,agenda:2,shift:.3}},{t:"批評藍白合是分贓政治",fx:{mob:2,ant:2}},{t:"不碰這題",fx:{}}]
+  }},
+thirdVoters:{pool:1,win:[T(15),T(26)],tag:"common",title:"上屆的第三勢力選民",
+  text:"2022年投給第三勢力候選人的選民，這次沒有自己的人選，是關鍵的搖擺票。要怎麼爭取？",
+  src:"2022年台北市長選舉，第三勢力候選人拿下約四分之一的選票。",
+  choices:{
+    chiang:[{t:"拉民眾黨支持者，主打藍白合作",fx:{shift:.5,mob:2}},{t:"主打市政成績，不談黨派",fx:{mid:3}},{t:"不特別處理",fx:{}}],
+    shen:[{t:"主攻上屆投第三勢力的選民，談政策不談藍綠",fx:{mid:3,shift:.5}},{t:"邀小黨聯盟一起爭取",fx:{shift:.4,mob:1,agenda:1}},{t:"不特別處理",fx:{}}]
+  }},
+tppRally:{pool:1,win:[T(18),T(27)],tag:"fiction",title:"白營的動向",
+  text:{chiang:"民眾黨台北的市議員參選人（虛構）邀候選人出席聯合造勢。去了能鞘固白營票，但部分中間選民反感藍白合。",shen:"一位對藍白合不滿的民眾黨基層幹部（虛構）私下釋出善意。"},
+  choices:{
+    chiang:[{t:"出席同台",fx:{slots:-1,shift:.6,mob:2,mid:-1}},{t:"派副手出席",fx:{shift:.3}},{t:"婉拒",fx:{mid:1,mob:-1}}],
+    shen:[{t:"低調接觸",fx:{shift:.3}},{t:"公開歡迎加入",rand:[{p:.6,fx:{shift:.6,mid:1},log:"消息傳開，吸引一些白營選民關注。"},{p:.4,fx:{ant:2,mid:-1},log:"對方被指控「叛逃」，反而激起白營反彈。"}]},{t:"婉拒，避免介入他黨內部",fx:{mid:1}}]
+  }},
+smallDeal:{pool:1,win:[T(13),T(24)],tag:"fiction",title:"小黨聯盟的條件",
+  text:{shen:"小黨聯盟（遊戲設定，泛指台北的進步派與本土派小黨）在台北傾向支持你們，但提出政策交換條件，換取公開背書。",chiang:"小黨聯盟（遊戲設定）傳出要公開支持對手。"},
+  choices:{
+    shen:[{t:"接受部分政見，換取公開背書",fx:{agenda:3,shift:.6,mob:2,mid:1}},{t:"只私下合作，不公開",fx:{shift:.3}},{t:"拒絕，政見不拿來交換",fx:{mor:1,agenda:-1},then:{in:2,id:"smallCold"}}],
+    chiang:[{t:"拉攟聯盟裡立場較中間的參選人",fx:{shift:.3,fund:-1}},{t:"批評小黨被綠營收編",fx:{mob:2,ant:2}},{t:"不回應",fx:{}}]
+  }},
+smallSplit:{pool:1,win:[T(16),D(11,22)],tag:"fiction",title:"小黨聯盟內部分歧",
+  text:{shen:"小黨聯盟內部對要不要全力幫你們助選出現分歧，有人擔心自己的議員席次被吃掉。",chiang:"小黨聯盟內部傳出分歧，不是每個黨都想幫對手。"},
+  choices:{
+    shen:[{t:"請大咖出面協調",need:()=>ME().fav>=1,fx:{fav:-1,shift:.4,mob:1}},{t:"尊重各黨決定",fx:{mid:1}},{t:"公開喚話團結",fx:{agenda:-2,mob:1}}],
+    chiang:[{t:"趁機拉攟不想表態的小黨",fx:{shift:.3}},{t:"不介入他黨內部",fx:{mid:1}}]
+  }},
+smallCold:{tag:"fiction",title:"小黨聯盟轉冷",text:"小黨聯盟宣布這次「不特別為市長候選人助選」，支持者投票意願下降。",choices:{both:[{t:"私下修補關係",fx:{slots:-1,shift:.2}},{t:"接受現實",fx:{mob:-2}}]}},
+smallStreet:{late:1,rep:1,cd:4,tag:"fiction",title:"小黨聯盟的聯合掃街",make(){const i=Math.floor(R()*6);return {
+  text:{shen:`小黨聯盟在${DN(i)}的議員參選人，邀候選人聯合掃街搶年輕票。`,chiang:`小黨聯盟與對手在${DN(i)}聯合掃街，搶年輕票。`},
+  choices:{shen:[{t:"親自去",fx:{slots:-1,dshift:{i,v:.7},mob:1}},{t:"派代表參加",fx:{dshift:{i,v:.3}}},{t:"今天排不出時間",fx:{}}],
+    chiang:[{t:`當天在${DN(i)}推青年政見`,fx:{agenda:3,fund:-1}},{t:"不理會",fx:{dshift:{i,v:-.4}}}]}}}},
+tppLast:{late:1,tag:"fiction",title:"白營的最後表態",
+  text:{chiang:"選前一週，民眾黨台北市黨部（虛構情節）提議為你們的候選人公開站台。",shen:"選前一週，傳出民眾黨台北市黨部要為對手公開站台（虛構情節）。"},
+  choices:{
+    chiang:[{t:"接受站台",fx:{shift:.6,mob:3,mid:-1}},{t:"婉拒，維持跨黨派形象",fx:{mid:2}}],
+    shen:[{t:"呼籲白營選民看政策不看黨",fx:{mid:2}},{t:"批評藍白綁樁",fx:{mob:2,ant:2}},{t:"不回應",fx:{}}]
+  }},
 /* ---------- follow-ups ---------- */
 trafficBack:{tag:"fiction",title:"塞車與鞭炮上新聞",text:"活動沿線塞車、鞭炮聲不斷，居民抱怨上了新聞。",choices:{both:[{t:"公開道歉並調整",fx:{mid:-1,ant:-2}},{t:"說是熱情的支持者",fx:{mid:-3,ant:3}}]}},
 deepfakeBack:{tag:"fiction",title:"影片還在傳",text:"那段深偽影片轉傳量翻了好幾倍。",choices:{both:[{t:"現在才出面澄清",fx:{mid:-2,agenda:-2}}]}},
@@ -724,7 +782,7 @@ function usedSlots(){const p=S.plan;return p.street.reduce((a,b)=>a+b,0)+p.rally
 function usedFund(){const p=S.plan;return p.ads+p.digital+p.org+p.rally*2+(p.intel?3:0)}
 function renderPlan(){
   const n=slotsFor(S.me,S.ti),u=usedSlots();
-  $("#slots").innerHTML=Array.from({length:n},(_,i)=>`<i class="${i<u?"on":"rest"}"></i>`).join("")+`<span style="font-size:.82rem;color:var(--muted);margin-left:6px">${n}格・已排 ${u}・其餘休息</span>`;
+  $("#slots").innerHTML=Array.from({length:n},(_,i)=>`<i class="${i<u?"on":"rest"}"></i>`).join("")+`<span style="font-size:.82rem;color:var(--muted);margin-left:6px">${n}格・已排 ${u}・其餘休息</span>${halfNote()}`;
   $("#acts").innerHTML=ACTS.filter(a=>!a.cond||a.cond()).map(a=>`<div class="row"><span class="lab">${a.t}<small>${a.h}</small></span><div class="ctr"><button data-act="${a.k}" data-d="-1" aria-label="減少${a.t}">−</button><output>${S.plan[a.k]}</output><button data-act="${a.k}" data-d="1" aria-label="增加${a.t}">+</button></div></div>`).join("")+
     (S.debates.some(x=>x>=S.ti&&x<=S.ti+1)?`<p style="font-size:.85rem;margin:.4em 0 0">辯論準備度：<b>${Math.round(S.prep)}</b></p>`:"");
   const left=ME().fund-usedFund();
@@ -765,6 +823,7 @@ function showEvent(id,done){
     if(hasHist){c.hist?S.hist++:S.alt++;}
     if(c.neg)S.neg++;
     if(c.flag)S.flags.add(c.flag);
+    if(c.half||ev.half){const X=ME(),day=TURNS[S.ti].k==="day";X.halfFrom=S.ti+1;X.halfTo=day?Math.min(LAST-1,S.ti+7):S.ti+1;}
     let out=applyFx(c.fx,S.me);let msg=c.log||"";
     if(c.then)S.queue.push({ti:S.ti+c.then.in,id:c.then.id});
     if(c.rand){let r=R(),o=c.rand[c.rand.length-1];for(const x of c.rand){if((r-=x.p)<0){o=x;break}}out=out.concat(applyFx(o.fx,S.me));msg=o.log||msg;if(o.then)S.queue.push({ti:S.ti+o.then.in,id:o.then.id});if(o.back)S.negBack++;}
@@ -864,6 +923,8 @@ function startTurn(){
     if(mine&&mine.length)S.pending.push(id);
     else S.news.push({tag:ev.tag,title:ev.title,text:txt(ev.text),src:ev.src});
   }}
+  // 候選人累倒：連續過勞後有機率觸發
+  if(S.ti<LAST&&(S.fatigue||0)>=3&&R()<.5){S.fatigue=0;S.pending.unshift("collapse");}
   // queued follow-ups
   S.queue=S.queue.filter(q=>{if(q.ti<=S.ti){S.pending.push(q.id);return false}return true});
   // negotiation
@@ -931,8 +992,9 @@ function applyAlloc(k,p,dt){
   bump(X,"mid",.8*p.media+.4*p.meet+1.4*Math.sqrt(p.ads));
   S.agenda=clamp(S.agenda+sgn(k)*(2*p.media+2.5*Math.sqrt(p.digital)),-100,100);
   bump(X,"ant",.6*p.rally);
+  if(k===S.me){if(TURNS[S.ti].k==="week")S.fatigue=rest<2?(S.fatigue||0)+1:Math.max(0,(S.fatigue||0)-1);else S.fatigue=rest===0?(S.fatigue||0)+.34:Math.max(0,(S.fatigue||0)-.5);}
   const restNeed=TURNS[S.ti].k==="week"?2:0;
-  bump(X,"mor",(rest>=restNeed?2.2*Math.min(rest,3):-5)-.2*busy);
+  bump(X,"mor",(rest>=restNeed?2.5*Math.min(rest,3):-2.5)-.1*busy);
   X.fund=Math.max(0,X.fund-(p.ads+p.digital+p.org+p.rally*2+(p.intel?3:0)));
   // morale effects on effectiveness
   const eff=(.6+X.mor/250)*(k===S.op?(S.aiBoost||1):1);
@@ -950,7 +1012,7 @@ function resolveTurn(){
   // undecided slowly decide
   const f=undecSplit();S.dist.forEach(d=>{const x=d.u*.025*dt;d.u-=x;d.s+=x*f;d.c+=x*(1-f)});
   // mean reversion
-  for(const k of ["shen","chiang"]){const X=S.sides[k];for(const key of ["mob","mid","ant"])X[key]+= (50-X[key])*.07*dt;}
+  for(const k of ["shen","chiang"]){const X=S.sides[k];for(const key of ["mob","mid","ant"])X[key]+= (50-X[key])*.07*dt;if(X.mor<65)X.mor+=(65-X.mor)*.05*dt;}
   S.agenda*=1-.18*dt;
   // intel
   if(p.intel){S.intel=S.dist.map(d=>{const l=distLikely(d);const e=randn()*3;return {s:clamp(l.s+e,0,100),c:clamp(l.c-e,0,100),u:l.u}});S.intelTi=S.ti;addLog("做了一次內部民調。");}
