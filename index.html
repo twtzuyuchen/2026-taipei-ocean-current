@@ -60,6 +60,7 @@ button:disabled{opacity:.4;cursor:not-allowed}
 .tag.common{color:var(--muted);border-color:var(--muted)}
 .tag.fiction{color:var(--alert);border-color:var(--alert)}
 .tag.ai{color:var(--side);border-color:var(--side)}
+.tag.net{color:#7A4FD0;border-color:#7A4FD0}
 .tag.hist{background:var(--note);color:var(--note-ink);border-color:var(--note)}
 
 /* pick */
@@ -254,7 +255,7 @@ footer{max-width:1180px;margin:0 auto;padding:10px 16px 40px;font-size:.78rem;co
     <p>前27回合每回合一週，最後兩週（11/15起）每回合一天，共41回合。每回合先處理事件卡，再分配候選人行程、經費和內部民調，按「結束本回合」。最後兩週每天至少會有兩張突發事件卡，投票日當天也會有，而且每張只有5秒可以決定，超過就視為不作為。經費在政治獻金專戶核准後，會隨聲勢增加。每位參選人每週都有12格行程。立委在會期中每週要回立法院開會，現任市長每週至少要排兩次市政行程，缺太多對手就會拿來攻擊。遊戲裡還藏著兩個足以扭轉戰局的重大事件，要連續滿足多項條件才會出現，其中一個兩邊都可能碰上。</p>
     <p>你看不到真實支持度。公開民調來自四家虛構機構，各有自己的偏差；花經費做內部民調才看得到各區狀況。開票時還會抽一次系統誤差：就算民調領先6個百分點，仍有約三成機率翻盤。</p>
     <h3>真實與虛構</h3>
-    <p><span class="tag real">真實事件</span> 依公開報導整理並附來源。<span class="tag rule">真實制度</span> 來自法規。<span class="tag common">常見情境</span> 是選戰常態。<span class="tag fiction">虛構情節</span> 由遊戲編寫，涉及的人物都是虛構的。<span class="tag ai">對手動態</span> 是對手 AI 依盤勢的反應。</p>
+    <p><span class="tag real">真實事件</span> 依公開報導整理並附來源。<span class="tag rule">真實制度</span> 來自法規。<span class="tag common">常見情境</span> 是選戰常態。<span class="tag fiction">虛構情節</span> 由遊戲編寫，涉及的人物都是虛構的。<span class="tag ai">對手動態</span> 是對手 AI 依盤勢的反應。<span class="tag net">網路熱議</span> 是依 Threads、Facebook 上的熱門話題與迷因改寫的情境，細節與人物為虛構。</p>
     <p>你自己陣營的真實決策會變成選項，當年實際的選擇標為 <span class="tag hist">史實選擇</span>。你可以改寫歷史，對手會依你的選擇反應。</p>
     <p>遊戲不替真實人物編寫台詞、醜聞或任何未經報導的行為。2026年10月15日之後的事件，除了已公告的行程（10/31辯論、11/28投票），都是虛構推演。</p>
   </div>
@@ -689,6 +690,43 @@ banqiao:{city:"tp",at:T(17),actor:"chiang",tag:"real",title:"9月5日・板橋�
   choices:{chiang:[{t:"到板橋合體拜票",hist:1,fx:{slots:-1,mob:1,ocShift:.5}},{t:"留在台北",fx:{mor:1}}]}},
 commute:{pool:1,win:[T(10),D(11,24)],tag:"common",title:"雙北通勤議題",text:"捷運環狀線與雙北通勤時間成為熱門話題，兩市候選人都被問到跨市交通。",
   choices:{both:[{t:"和鄰市同黨候選人聯合發表雙北交通政見",fx:{slots:-1,agenda:4,ocShift:.3}},{t:"只談自己城市的交通",fx:{agenda:2}},{t:"不接這個題",fx:{agenda:-3}}]}},
+/* ---------- 網路熱議：依 2026/10 Threads、Facebook 熱門話題改寫 ---------- */
+merch:{pool:1,win:[T(17),D(11,26)],tag:"net",title:"支持者自製周邊爆紅",text:"支持者自製的應援周邊（貼紙、手機殼、飄帶、風車）在社群爆紅，有人排隊索取，還有人把圖案刺在身上。",
+  src:"依社群平台上支持者自製應援小物的熱門討論改寫，細節為虛構。",
+  choices:{both:[{t:"官方加碼推出限定周邊",fx:{fund:-2,mob:4,mor:2}},{t:"鼓勵支持者自由創作、開放素材",fx:{mob:2,agenda:1}},{t:"低調，不特別回應",fx:{}}]}},
+streetPoll:{pool:1,win:[T(14),D(11,24)],tag:"net",title:"街頭民調影片",make(){const good=R()<.5;return good?{
+  text:"一個 YouTube 頻道上街做「街頭民調」，影片點閱破百萬，結果一面倒對你們有利。",
+  choices:{both:[{t:"官方轉發，帶動聲勢",fx:{mob:3,mid:-1}},{t:"提醒支持者街訪不具代表性，繼續打拼",fx:{mid:2,mor:1}},{t:"不回應",fx:{}}]}}:{
+  text:"一個 YouTube 頻道上街做「街頭民調」，影片點閱破百萬，結果一面倒對你們不利，支持者群組人心浮動。",
+  choices:{both:[{t:"質疑影片剪輯不公平",fx:{mob:2,ant:1}},{t:"請支持者冷靜，回到政策",fx:{mid:2,mor:1}},{t:"不回應",fx:{mor:-2,mob:-1}}]}};},
+  src:"依社群上「街頭民調」影片的熱議改寫，細節為虛構。"},
+quoteMeme:{pool:1,win:[T(10),D(11,26)],tag:"net",title:"一句話被做成迷因",text:"候選人在節目上對通勤時間的一句說法被網友截成迷因，大家都在上傳自己「實測」的影片。",
+  src:"依社群上候選人發言被做成迷因的熱議改寫，細節為虛構。",
+  choices:{both:[{t:"自嘲接梗，親自拍一支實測影片",fx:{slots:-1},rand:[{p:.6,fx:{mid:3,mob:2},log:"自嘲影片比迷因還紅，風向反轉。"},{p:.4,fx:{mid:-2},log:"實測結果更慢，反而被做成第二波迷因。"}]},{t:"出面澄清原意",fx:{mid:1,agenda:-1}},{t:"不回應",fx:{mid:-2}}]}},
+familyTurn:{pool:1,win:[T(12),D(11,25)],tag:"net",title:"長輩轉向的暖心文",text:"一篇「長輩因為孩子而改變投票想法」的暖心文在社群瘋傳，主角是你們的支持者。",
+  src:"依社群上家人政治對話的熱門貼文改寫，人物為虛構。",
+  choices:{both:[{t:"官方分享並感謝",fx:{mid:2,mob:2}},{t:"邀請主角一家一起掃街",fx:{slots:-1,mid:3}},{t:"不碰，讓它自然發酵",fx:{}}]}},
+backfire:{pool:1,win:[T(14),D(11,24)],tag:"net",title:"後援會長台上脫稿",text:"一場後援會成立大會上，一位虛構的後援會長脫稿批評同黨的另一位首長，影片被對手陣營瘋傳，網友稱為「自己人拆台」。",
+  src:"依社群上「自家後援會台上拆台」的熱議改寫，人物為虛構。",
+  pre(){applyFx({mid:-2,mor:-2},S.me)},
+  choices:{both:[{t:"立刻緩頰，強調同黨團結",fx:{mid:1,mor:1}},{t:"順勢說會把意見帶回去，切割同黨首長",fx:{mid:2,ocShift:-.3,mor:-1}},{t:"不回應",fx:{mid:-2}}]}},
+hqVisit:{pool:1,win:[T(17),D(11,25)],tag:"net",title:"網友實測競總",text:"一位網友走進你們的競選總部參觀，發文抱怨被冷淡對待、找不到政見文宣，貼文在社群瘋傳。",
+  src:"依社群上網友實測競選總部的熱門貼文改寫，細節為虛構。",
+  choices:{both:[{t:"公開道歉並改善接待流程",fx:{fund:-1,mid:2,mor:-1}},{t:"邀請這位網友再來一次，候選人親自導覽",fx:{slots:-1},rand:[{p:.7,fx:{mid:3},log:"第二篇實測文大轉彎，留言一片好評。"},{p:.3,fx:{mid:-1},log:"被說是公關作秀。"}]},{t:"說是個案，不代表全體",fx:{mid:-2}}]}},
+waveFear:{pool:1,win:[T(18),D(11,25)],tag:"net",title:"聲勢太盛的擔憂",
+  text:{shen:"社群上開始有人擔心：你們的聲勢太盛，反而會激起對手陣營的危機意識，讓對方支持者動員起來。",chiang:"對手的網路聲勢很盛，陣營裡有人提議：用自己的口號辦一場跨縣市聯合造勢，把聲勢拉回來。"},
+  src:"依社群上「聲勢太盛會激起對手危機意識」及「以自己的流對抗洋流」的熱議改寫。",
+  choices:{shen:[{t:"刻意降溫，提醒支持者不要輕敵",fx:{ant:-3,mob:-1,mor:1}},{t:"乘勝擴大聲勢",fx:{mob:4,ant:3}},{t:"不特別處理",fx:{}}],
+    chiang:[{t:"辦跨縣市聯合造勢",need:()=>ME().fav>=1,fx:{fav:-1,mob:5,ocShift:.3}},{t:"不跟著對手的框架走，專心談政績",fx:{mid:2}},{t:"不特別處理",fx:{}}]}},
+cashPledge:{pool:1,win:[T(4),D(11,22)],tag:"net",title:"普發現金政見攻防",text:"一個「普發現金」的說法在社群爆紅，對手質疑財源根本做不到，網友吵翻天。",
+  src:"依社群上普發現金政見的攻防熱議改寫，細節為虛構。",
+  choices:{both:[{t:"公開財源試算",fx:{slots:-1,mid:3,agenda:2}},{t:"改口說只是研議方向",fx:{mid:-2}},{t:"反擊對手抹黑",fx:{agenda:2}}]}},
+airportAI:{pool:1,win:[T(18),D(11,26)],tag:"net",title:"松山機場與 AI 廠之爭",text:"松山機場要不要遷建、AI 大廠要落腳北士科還是淡海，成為雙北網路上最熱的話題。",
+  src:"依社群與媒體上松山機場遷建、AI 產業廊帶的熱門討論改寫。",
+  choices:{both:[{t:"和鄰市同黨候選人聯合推出雙北產業政見",fx:{slots:-1,agenda:4,ocShift:.3}},{t:"只談自己城市的方案",fx:{agenda:2}},{t:"不接這個題",fx:{agenda:-3}}]}},
+storeMap:{pool:1,win:[T(18),D(11,26)],tag:"net",title:"表態店家地圖",text:"支持者在網路上整理「表態店家地圖」，有店家因此湧進客人，也有店家被不同立場的網友留言洗版。",
+  src:"依社群上店家表態與表態地圖的熱議改寫，細節為虛構。",
+  choices:{both:[{t:"官方分享地圖",fx:{mob:3,ant:2}},{t:"呼籲尊重每位店家的選擇",fx:{mid:2}},{t:"不回應",fx:{}}]}},
 /* ---------- 虛構重大事件 ---------- */
 pileup:{pool:1,major:1,w:{shen:.6,chiang:.6},win:[T(6),D(11,25)],tag:"fiction",title:"連環車禍",
   pre(){S.majSite.pileup=Math.floor(R()*6)},
@@ -960,7 +998,7 @@ function renderNews(){
   const items=S.news.length?S.news:[{tag:"common",title:"平靜的一回合",text:"沒有大新聞。適合把行程排滿。"}];
   $("#news").innerHTML=items.map(n=>`<div class="sticky"><span class="tag ${n.tag}">${tagName(n.tag)}</span><b>${esc(n.title)}</b>${esc(n.text||"")}${n.src?`<div class="src">${esc(n.src)}</div>`:""}</div>`).join("");
 }
-function tagName(t){return {real:"真實事件",rule:"真實制度",common:"常見情境",fiction:"虛構情節",ai:"對手動態"}[t]}
+function tagName(t){return {real:"真實事件",rule:"真實制度",common:"常見情境",fiction:"虛構情節",ai:"對手動態",net:"網路熱議"}[t]}
 function renderPoll(){
   const p=S.polls[S.polls.length-1],sh=CITY[S.city].short;
   let h=`<h2>公開民調・${CITY[S.city].full}</h2>`;
@@ -1063,7 +1101,7 @@ function showEvent(id,done){
     if(S.me==="shen"&&["flood","mrt","typhoon"].includes(id)&&R()<.4)S.flags.add("infraWeak");
     if(id==="law")S.flags.add("lawCase");
     if(c.half||ev.half){const X=ME(),day=TURNS[S.ti].k==="day";X.halfFrom=S.ti+1;X.halfTo=day?Math.min(LAST-1,S.ti+7):S.ti+1;}
-    const fic=["fiction","common","ai"].includes(ev.tag);let vnote="";const V=f=>{if(!fic||!f)return f;const r=varyFx(f);if(r.note)vnote=r.note;return r.fx};
+    const fic=["fiction","common","ai","net"].includes(ev.tag);let vnote="";const V=f=>{if(!fic||!f)return f;const r=varyFx(f);if(r.note)vnote=r.note;return r.fx};
     const ATK_RE=/^(批|痛批|反批|猛攻|全力猛攻|反擊|翻出|持續追打|攻擊|暗示對手|把事件連結到|質疑)/;let cfx=c.fx;
     if(ATK_RE.test(c.t||"")){cfx=Object.assign({},c.fx);cfx.mob=Math.max(cfx.mob||0,2);cfx.mid=Math.min(cfx.mid||0,-1.5);cfx.ant=Math.max(cfx.ant||0,2);}
     let out=applyFx(V(cfx),S.me);let msg=c.log||"";
