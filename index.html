@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="選邊操盤沈伯洋或蔣萬安陣營，從5月徵召一路打到11月28日開票。真實事件與虛構推演交錯，你看得到的只有民調。">
+<meta name="description" content="選邊操盤沈伯洋、蔣萬安、蘇巧慧或李四川陣營，從5月一路打到11月28日開票，雙北選情互相連動。真實事件與虛構推演交錯，你看得到的只有民調。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="2026台北大洋流・台北市長選戰模擬">
-<meta property="og:description" content="選邊操盤沈伯洋或蔣萬安陣營，從5月徵召一路打到11月28日開票。真實事件與虛構推演交錯，你看得到的只有民調。">
+<meta property="og:title" content="2026雙北市長選戰模擬">
+<meta property="og:description" content="選邊操盤沈伯洋、蔣萬安、蘇巧慧或李四川陣營，從5月一路打到11月28日開票，雙北選情互相連動。真實事件與虛構推演交錯，你看得到的只有民調。">
 <meta property="og:url" content="https://twtzuyuchen.github.io/2026-taipei-ocean-current/">
 <meta property="og:image" content="https://twtzuyuchen.github.io/2026-taipei-ocean-current/og-cover.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<title>2026台北大洋流 · 台北市長選戰模擬</title>
+<title>2026雙北市長選戰模擬</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -206,31 +206,51 @@ footer{max-width:1180px;margin:0 auto;padding:10px 16px 40px;font-size:.78rem;co
 <!-- PICK -->
 <section id="pick" class="wrap">
   <div class="title">
-    <h1>2026台北大洋流</h1>
-    <p class="sub hand" style="font-size:1.3rem">台北市長選戰模擬・從5月13日徵召到11月28日開票</p>
+    <h1>2026雙北市長選戰模擬</h1>
+    <p class="sub hand" style="font-size:1.3rem">台北、新北一起開打・從5月13日到11月28日開票</p>
     <p class="sub">你是競選總部的操盤手。候選人每週有限的行程、每週進帳的經費、有限的大咖人情，都由你分配。你看得到的只有民調，而民調會騙人。</p>
   </div>
+  <h2 class="hand" style="font-size:1.6rem;margin-top:10px">台北市</h2>
   <div class="sides">
     <div class="sidecard s">
       <span class="tag common">民主進步黨</span>
       <h2>沈伯洋</h2>
       <p>1982年生於台北。台大法律系、法律研究所碩士，美國賓州大學法學碩士，加州大學爾灣分校犯罪學、法律與社會博士。</p>
       <p>曾任台北大學犯罪學研究所教職，2021年創立黑熊學院，2024年起任不分區立法委員。</p>
-      <button class="go" data-side="shen">接下沈陣營的操盤</button>
+      <button class="go" data-side="shen" data-city="tp">接下沈陣營的操盤</button>
     </div>
     <div class="sidecard c">
       <span class="tag common">中國國民黨</span>
       <h2>蔣萬安</h2>
       <p>1978年生於台北。政治大學外交系、法律系雙主修，美國賓州大學法學院 J.D.（法律博士）。</p>
       <p>曾任美國執業律師，第9、10屆立法委員，2022年當選台北市長，現尋求連任。</p>
-      <button class="go" data-side="chiang">接下蔣陣營的操盤</button>
+      <button class="go" data-side="chiang" data-city="tp">接下蔣陣營的操盤</button>
+    </div>
+  </div>
+  <h2 class="hand" style="font-size:1.6rem">新北市</h2>
+  <div class="sides">
+    <div class="sidecard s">
+      <span class="tag common">民主進步黨</span>
+      <h2>蘇巧慧</h2>
+      <p>1976年生。台大法律系，美國波士頓大學、賓州大學法律碩士，律師高考及格，曾任萬國法律事務所律師、超越基金會執行長。</p>
+      <p>2016年起連任三屆新北市第五選區（樹林、鶯歌、新莊部分）立法委員。</p>
+      <button class="go" data-side="shen" data-city="nt">接下蘇陣營的操盤</button>
+    </div>
+    <div class="sidecard c">
+      <span class="tag common">中國國民黨</span>
+      <h2>李四川</h2>
+      <p>1958年生於屏東小琉球。台北科技大學電機系碩士，在台北市工務體系服務25年。</p>
+      <p>曾任台北縣副縣長、新北市副市長、行政院秘書長、國民黨秘書長、高雄市副市長、台北市副市長，2026年經藍白合作民調出線參選。</p>
+      <button class="go" data-side="chiang" data-city="nt">接下李陣營的操盤</button>
     </div>
   </div>
   <div class="rules">
     <h3>起始盤</h3>
-    <p>遊戲從2026年5月13日民進黨徵召沈伯洋開始。起始支持度採用 TVBS 民調中心5月27日公布的數據：<b style="color:var(--ink)">蔣萬安58%、沈伯洋30%、未決定13%</b>。這是遊戲唯一採用的真實民調，之後的數字都由你的操盤決定。</p>
+    <p>遊戲從2026年5月13日民進黨徵召沈伯洋開始。台北的起始支持度採用 TVBS 民調中心5月27日公布的數據：<b style="color:var(--ink)">蔣萬安58%、沈伯洋30%、未決定13%</b>。新北的對決早已確定：4月28日藍白合作民調由李四川出線，起始支持度採用美麗島電子報4月公布的數據：<b style="color:var(--ink)">李四川35.5%、蘇巧慧34.5%</b>，約三成未表態。這兩份是遊戲唯一採用的真實民調，之後的數字都由操盤決定。</p>
+    <h3>雙北連動</h3>
+    <p>你操盤其中一個陣營，另外三個由 AI 操盤，兩市每回合同步推進。同黨在一市的起落會外溢到另一市；同黨的雙北候選人共用一個大咖人情池；在交界選區掃街會影響對面城市；雙北通勤、食安等議題會同時牽動兩邊。另一市的戰況只能從民調和鄰市隊友偶爾提供的內參看到。</p>
     <h3>怎麼玩</h3>
-    <p>前27回合每回合一週，最後兩週（11/15起）每回合一天，共41回合。每回合先處理事件卡，再分配候選人行程、經費和內部民調，按「結束本回合」。最後兩週每天至少會有兩張突發事件卡，投票日當天也會有，而且每張只有5秒可以決定，超過就視為不作為。經費在政治獻金專戶核准後，會隨聲勢增加。</p>
+    <p>前27回合每回合一週，最後兩週（11/15起）每回合一天，共41回合。每回合先處理事件卡，再分配候選人行程、經費和內部民調，按「結束本回合」。最後兩週每天至少會有兩張突發事件卡，投票日當天也會有，而且每張只有5秒可以決定，超過就視為不作為。經費在政治獻金專戶核准後，會隨聲勢增加。遊戲裡還藏著兩個足以扭轉戰局的重大事件，要連續滿足多項條件才會出現，其中一個兩邊都可能碰上。</p>
     <p>你看不到真實支持度。公開民調來自四家虛構機構，各有自己的偏差；花經費做內部民調才看得到各區狀況。開票時還會抽一次系統誤差：就算民調領先6個百分點，仍有約三成機率翻盤。</p>
     <h3>真實與虛構</h3>
     <p><span class="tag real">真實事件</span> 依公開報導整理並附來源。<span class="tag rule">真實制度</span> 來自法規。<span class="tag common">常見情境</span> 是選戰常態。<span class="tag fiction">虛構情節</span> 由遊戲編寫，涉及的人物都是虛構的。<span class="tag ai">對手動態</span> 是對手 AI 依盤勢的反應。</p>
@@ -290,7 +310,7 @@ footer{max-width:1180px;margin:0 auto;padding:10px 16px 40px;font-size:.78rem;co
         <div id="inds"></div>
         <div style="margin-top:12px;font-size:.88rem">議題主導權</div>
         <div class="tug"><i id="tugpin"></i></div>
-        <div class="tug-l"><span>蔣陣營設定題目</span><span>沈陣營設定題目</span></div>
+        <div class="tug-l"><span id="tugL"></span><span id="tugR"></span></div>
       </div>
     </div>
   </div>
@@ -303,7 +323,7 @@ footer{max-width:1180px;margin:0 auto;padding:10px 16px 40px;font-size:.78rem;co
 
 <div id="modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="ctitle"><div id="card"></div></div>
 
-<footer>非官方、非任何陣營製作的教育性模擬遊戲。真實事件依公開新聞整理；民調機構皆為虛構；起始盤依 TVBS 2026/5/27 民調推估，分區數值部分為推估；選舉人數為約略值。遊戲結果是模擬，不是預測。</footer>
+<footer>非官方、非任何陣營製作的教育性模擬遊戲。真實事件依公開新聞整理；民調機構皆為虛構；台北起始盤依 TVBS 2026/5/27 民調、新北起始盤依美麗島電子報2026年4月民調推估，分區數值部分為推估；選舉人數為約略值。遊戲結果是模擬，不是預測。</footer>
 
 <script>
 (function(){
@@ -324,7 +344,7 @@ const fmtN=n=>Math.round(n).toLocaleString("zh-TW");
 /* ============ data ============ */
 const SIDES={shen:{name:"沈陣營",cand:"沈伯洋",full:"沈伯洋陣營"},chiang:{name:"蔣陣營",cand:"蔣萬安",full:"蔣萬安陣營"}};
 // 起始盤：依 TVBS 5/27 民調整體(蔣58 沈30 未決13)與分區描述推估
-const DIST0=[
+const DIST_TP=[
   {id:"bt",name:"北投士林",pop:50,c:55,s:33,u:12},
   {id:"nh",name:"內湖南港",pop:38,c:62,s:27,u:11},
   {id:"zd",name:"中山大同",pop:33,c:43,s:47,u:10},
@@ -332,8 +352,28 @@ const DIST0=[
   {id:"zw",name:"中正萬華",pop:32,c:58,s:18,u:24},
   {id:"dw",name:"大安文山",pop:55,c:57,s:30,u:13}
 ];
-const ELECTORATE=2080000; // 約略值
-const POPSUM=DIST0.reduce((a,d)=>a+d.pop,0);
+// 新北起始盤：依美麗島電子報2026年4月民調（李35.5、蘇34.5）與後續民調分區描述推估
+const DIST_NT=[
+  {id:"bq",name:"板橋",pop:56,c:37,s:38,u:25},
+  {id:"sc",name:"三重新莊蘆洲",pop:121,c:36,s:35,u:29},
+  {id:"sh",name:"雙和",pop:63,c:42,s:29,u:29},
+  {id:"xd",name:"新店深坑",pop:33,c:45,s:27,u:28},
+  {id:"ts",name:"土城樹林三鶯",pop:63,c:31,s:40,u:29},
+  {id:"xz",name:"汐止淡水林口北海岸",pop:64,c:37,s:33,u:30}
+];
+const CITY={
+  tp:{name:"台北",full:"台北市",dist:DIST_TP,elect:2080000,cand:{shen:"沈伯洋",chiang:"蔣萬安"},short:{shen:"沈",chiang:"蔣"},
+    start:{inst:"TVBS（起始盤）",date:"5/27",real:1,s:30,c:58,u:13},startGap:-28,
+    sides:{shen:{mob:50,mid:40,ant:58},chiang:{mob:55,mid:60,ant:45}}},
+  nt:{name:"新北",full:"新北市",dist:DIST_NT,elect:3300000,cand:{shen:"蘇巧慧",chiang:"李四川"},short:{shen:"蘇",chiang:"李"},
+    start:{inst:"美麗島電子報（起始盤）",date:"4月",real:1,s:34.5,c:35.5,u:30},startGap:-1,
+    sides:{shen:{mob:52,mid:52,ant:48},chiang:{mob:52,mid:53,ant:47}}}
+};
+// 交界選區：台北各區相鄰的新北選區
+const BORDER={tp:[[1,5],[5],[1],[],[0,2],[3,2]],nt:[[],[],[],[],[],[]]};
+BORDER.tp.forEach((arr,i)=>arr.forEach(j=>BORDER.nt[j].push(i)));
+const DIST0=DIST_TP;
+const SF=(k,c)=>CITY[c||S.city].cand[k]+"陣營";
 const INST=[
   {name:"海港民調中心",house:-1.6,sd:1.6},
   {name:"北辰輿情研究",house:1.6,sd:1.6},
@@ -354,17 +394,17 @@ const NEG_TURNS=[T(14),T(18),T(21),T(23)];
 
 /* ============ state ============ */
 let S=null;
-function newState(side){
-  const opp=side==="shen"?"chiang":"shen";
-  return {
-    me:side,op:opp,ti:0,startedAt:Date.now(),
-    dist:DIST0.map(d=>Object.assign({},d)),
-    sides:{
-      shen:{mob:50,mid:40,ant:58,mor:70,fund:10,fav:5,pen:0},
-      chiang:{mob:55,mid:60,ant:45,mor:70,fund:10,fav:4,pen:0}
-    },
+function mkSides(c){const o={};for(const k of ["shen","chiang"])o[k]=Object.assign({mor:70,fund:10,pen:0},CITY[c].sides[k]);return o}
+function newState(side,city){
+  const opp=side==="shen"?"chiang":"shen",oc=city==="tp"?"nt":"tp";
+  const st={
+    me:side,op:opp,city,ti:0,startedAt:Date.now(),
+    dist:CITY[city].dist.map(d=>Object.assign({},d)),
+    sides:mkSides(city),
+    pool:{shen:7,chiang:6},
+    oc:{city:oc,dist:CITY[oc].dist.map(d=>Object.assign({},d)),sides:mkSides(oc),agenda:0,polls:[Object.assign({},CITY[oc].start)],trace:[],dg:0},
     agenda:0, flags:new Set(), used:new Set(), queue:[], log:[],
-    polls:[{inst:"TVBS（起始盤）",date:"5/27",real:1,s:30,c:58,u:13}], trace:[], intel:null, intelTi:-1, lastPollGap:-28,
+    polls:[Object.assign({},CITY[city].start)], trace:[], intel:null, intelTi:-1, lastPollGap:CITY[city].startGap,
     hist:0,alt:0,neg:0,negBack:0,aiCount:0,
     neg8:{done:false,n:0,round:0,offer:null,press:{shen:0,chiang:0}},
     debates:[], prep:0, debateLog:[],
@@ -373,6 +413,13 @@ function newState(side){
     evShift:Object.fromEntries(POOL.map(id=>[id,Math.floor(Math.random()*9)-4])),
     evSkip:POOL.filter(()=>Math.random()<.25)
   };
+  for(const sd of [st.sides,st.oc.sides])for(const k of ["shen","chiang"])Object.defineProperty(sd[k],"fav",{get(){return st.pool[k]},set(v){st.pool[k]=v},enumerable:true});
+  return st;
+}
+function withOther(fn){
+  const sv={dist:S.dist,sides:S.sides,agenda:S.agenda,city:S.city,boost:S.aiBoost};
+  S._homeDist=S.dist;S.dist=S.oc.dist;S.sides=S.oc.sides;S.agenda=S.oc.agenda;S.city=S.oc.city;S.aiBoost=1;S._sim=true;
+  try{return fn()}finally{S.oc.agenda=S.agenda;S.dist=sv.dist;S.sides=sv.sides;S.agenda=sv.agenda;S.city=sv.city;S.aiBoost=sv.boost;S._sim=false;}
 }
 const ME=()=>S.sides[S.me], OP=()=>S.sides[S.op];
 const sgn=k=>k==="shen"?1:-1;
@@ -394,10 +441,38 @@ function shiftDist(d,x){ // x>0 toward shen
 }
 function slotsFor(k,ti){
   const t=TURNS[ti];let n;
-  if(t.k==="day") n=(k==="chiang"&&ti<S.leaveTi)?1:2;
-  else n=k==="shen"?12:(ti>=S.leaveTi?14:8);
+  const inc=S.city==="tp"&&k==="chiang";
+  if(t.k==="day") n=(inc&&ti<S.leaveTi)?1:2;
+  else n=inc?(ti>=S.leaveTi?14:8):12;
   const H=S.sides[k];if(H.halfTo!==undefined&&ti>=H.halfFrom&&ti<=H.halfTo)n=Math.floor(n/2);
   return Math.max(0,n-S.sides[k].pen);
+}
+function cnText(){return S.cnTarget===S.me?"國安單位公開示警：境外勢力透過大量假帳號與內容農場散布不實訊息，主要針對你們的候選人，部分網路聲量已經被帶風向，支持度先掉了一點。":"國安單位公開示警：境外勢力透過大量假帳號與內容農場散布不實訊息，主要針對對手的候選人。媒體問你們怎麼看。"}
+function cnChoices(){
+  if(S.cnTarget===S.me)return [
+    {t:"公開揭露手法，請國安單位與平台處理",fx:{mid:2,agenda:2,shift:.6}},
+    {t:"低調檢舉，不讓話題擴大",rand:[{p:.5,fx:{shift:-.5},log:"不實訊息持續擴散。"},{p:.5,fx:{},log:"平台很快下架了大部分帳號。"}]},
+    {t:"藉此喊出捍衛民主，團結支持者",fx:{mob:5,ant:3}}];
+  return [
+    {t:"呼籲選民留意假訊息，不趁機攻擊對手",fx:{mid:3}},
+    {t:"暗示對手是境外勢力的受益者",fx:{agenda:3,ant:3},rand:[{p:.5,fx:{mid:-4},log:"被批評把國安議題當選舉工具。"},{p:.5,fx:{mob:2},log:"支持者轉傳，但沒有新的證據。"}]},
+    {t:"不回應",fx:{}}];
+}
+function tcText(){
+  const mine=S.tcDone===S.me;
+  return mine?"一位虛構的前競總幹部對媒體公開內部群組截圖，顯示競總高層知情先前的小編操作與爆料。所有累積的反感一次爆開，你們的支持度一夕重挫約10個百分點。現在只能決定怎麼止血。":"對手一位虛構的前競總幹部對媒體公開內部群組截圖，顯示對手競總高層知情先前的操作。對手的支持度一夕重挫約10個百分點。你們要怎麼接？";
+}
+function tcChoices(){
+  if(S.tcDone===S.me)return [
+    {t:"候選人親上火線道歉，撤換相關幕僚",fx:{mor:-4,mid:3,shift:1.5,slots:-1}},
+    {t:"切割外圍，否認高層知情",rand:[{p:.5,fx:{mid:-4,agenda:-5},log:"媒體追出更多截圖，否認破功。"},{p:.5,fx:{mid:1},log:"暫時壓住了風向。"}]},
+    {t:"轉移焦點，猛攻對手",fx:{ant:4,mob:3},rand:[{p:.4,fx:{mid:-3},log:"被批評是在轉移焦點。"},{p:.6,fx:{},log:"自己人穩住了，但中間選民沒有回來。"}]}
+  ];
+  return [
+    {t:"保持克制，只談政策",fx:{mid:3}},
+    {t:"乘勝追擊，每天開記者會",fx:{agenda:5,ant:3},rand:[{p:.3,fx:{mid:-2},log:"被批評趕盡殺絕。"},{p:.7,fx:{agenda:2},log:"話題持續在對手身上。"}]},
+    {t:"呼籲對手支持者「換個選擇」",fx:{shift:.8,ant:2}}
+  ];
 }
 function winOf(id){
   const e=EV[id];if(!e||!e.win)return null;if(e.late||!e.pool)return e.win;
@@ -429,6 +504,7 @@ function halfNote(){
   return "";
 }
 function histGap(ti){ // expected shen-chiang likely gap following history
+  if(S.city==="nt")return -3;
   const w=Math.min(ti+1,23);if(w<=3)return -28;return -28+(w-3)*(20/20);
 }
 
@@ -442,7 +518,8 @@ function applyFx(fx,k){
   if(fx.fund){X.fund=Math.max(0,X.fund+fx.fund);out.push(["fund",fx.fund]);}
   if(fx.fav){X.fav=Math.max(0,X.fav+fx.fav);out.push(["fav",fx.fav]);}
   if(fx.agenda){S.agenda=clamp(S.agenda+sgn(k)*fx.agenda,-100,100);out.push(["agenda",fx.agenda]);}
-  if(fx.shift){S.dist.forEach(d=>shiftDist(d,sgn(k)*fx.shift));out.push(["shift",fx.shift]);}
+  if(fx.shift){S.dist.forEach(d=>shiftDist(d,sgn(k)*fx.shift));out.push(["shift",fx.shift]);if(!S._sim)S.oc.dist.forEach(d=>shiftDist(d,sgn(k)*fx.shift*.3));}
+  if(fx.ocShift&&!S._sim)S.oc.dist.forEach(d=>shiftDist(d,sgn(k)*fx.ocShift));
   if(fx.opMob)bump(Y,"mob",fx.opMob);
   if(fx.opMid)bump(Y,"mid",fx.opMid);
   if(fx.slots)X.pen+=-fx.slots;
@@ -458,92 +535,92 @@ function deltaHTML(out,isMe=true){
 /* fx are from the chooser's perspective */
 const EV={
 /* ---------- real ---------- */
-nominate:{at:T(1),actor:"shen",tag:"real",title:"5月13日・徵召",
+nominate:{city:"tp",at:T(1),actor:"shen",tag:"real",title:"5月13日・徵召",
   text:{shen:"黨中央正式徵召，下午披上競選背帶。第一件事：定下選戰主軸。",chiang:"民進黨正式徵召對手參選。記者在市府門口等你回應。"},
   src:"報導：民進黨5/13中執會徵召沈伯洋，由賴清德繫上競選背帶。另有報導指團隊將選戰焦點鎖定市政體檢、淡化仇恨值。同日蔣萬安回應「台北隊」持續專注市政。",
   choices:{
     shen:[{t:"主打市政體檢，淡化政治對決",hist:1,fx:{mid:5,mob:-2,ant:-3}},{t:"主打守護台灣、國安牌",fx:{mob:8,mid:-4,ant:6}},{t:"兩條線並進",fx:{mob:3,mid:1,ant:2}}],
     chiang:[{t:"回應「持續專注在市政上」",hist:1,fx:{mid:3,agenda:-1}},{t:"直接點評對手的立場",fx:{mob:4,ant:3,agenda:3}},{t:"不回應",fx:{}}]
   }},
-taoban:{at:T(2),tag:"real",title:"5月20日・國台辦點名",
+taoban:{city:"tp",at:T(2),tag:"real",title:"5月20日・國台辦點名",
   text:{shen:"國台辦例行記者會點名批評候選人。媒體問要不要回應。",chiang:"國台辦點名批評對手。記者問你怎麼看。"},
   src:"報導：國台辦發言人5/20在例行記者會上點名批評沈伯洋。",
   choices:{
     shen:[{t:"冷靜回應，把焦點拉回市政",fx:{mid:2,agenda:1}},{t:"強硬回擊",fx:{mob:5,ant:3,agenda:2}},{t:"不回應",fx:{}}],
     chiang:[{t:"表示台北市長由台北市民決定",fx:{mid:2}},{t:"不評論",fx:{}},{t:"借題批評對手引來對岸關注",fx:{mob:3,ant:4,mid:-2}}]
   }},
-clash:{at:T(2),tag:"real",title:"5月下旬・第一波隔空攻防",
+clash:{city:"tp",at:T(2),tag:"real",title:"5月下旬・第一波隔空攻防",
   text:{shen:"市府舉大巨蛋、輝達落腳反駁你們「缺乏城市願景」的質疑。要怎麼接？",chiang:"對手質疑台北缺乏城市願景。要怎麼反擊？"},
   src:"報導：蔣萬安5/23舉大巨蛋啟用、輝達落腳兩例反駁；沈伯洋5/24以密室逃脫與偷拍議題，批市府遇事推給中央。",
   choices:{
     shen:[{t:"以密室逃脫與偷拍議題，批市府遇事推給中央",hist:1,fx:{agenda:4,mob:2,ant:1}},{t:"提出自己的城市願景",fx:{mid:3,agenda:2}},{t:"不接，繼續跑基層",fx:{mob:2}}],
     chiang:[{t:"舉大巨蛋啟用、輝達落腳反駁",hist:1,fx:{mid:3,agenda:3}},{t:"不回應，讓市府團隊說明",fx:{mid:1}},{t:"反批對手不熟市政",fx:{mob:3,ant:2,agenda:2}}]
   }},
-censor:{at:T(5),actor:"chiang",tag:"real",title:"6月12日・監委名單",
+censor:{city:"tp",at:T(5),actor:"chiang",tag:"real",title:"6月12日・監委名單",
   text:{chiang:"總統府公布監委提名名單。要不要表態？",shen:"市長在臉書呼籲在野否決監委名單。要不要回應？"},
   src:"報導：蔣萬安6/12在臉書呼籲在野否決監委提名名單。",
   choices:{
     chiang:[{t:"臉書呼籲在野否決整份名單",hist:1,fx:{mob:4,mid:-1,agenda:3}},{t:"只評論個別人選",fx:{mid:1}},{t:"不表態，專注市政",fx:{mid:1,agenda:-1}}],
     shen:[{t:"批評市長插手中央人事",fx:{mob:2,ant:1,agenda:1}},{t:"不跟進，繼續談市政",fx:{mid:1}}]
   }},
-oil:{at:T(10),tag:"real",title:"7月中・致癌油風暴",
+oil:{city:"tp",at:T(10),tag:"real",title:"7月中・致癌油風暴",
   text:{chiang:"中聯致癌油事件延燒，市民很不安。市府要怎麼出手？",shen:"致癌油事件延燒。對手正在把問題拉高到中央責任。你們怎麼接這個題？"},
   src:"報導：中聯致癌油事件延燒。蔣萬安7/17號召民眾7/25上凱道，並要求閣揆下台；民進黨新聞部指出台北市食安會15次會議蔣缺席11次。",
   choices:{
     chiang:[{t:"號召7/25上凱道，並追究中央政治責任",hist:1,flag:"oilRally",fx:{mob:8,agenda:8,ant:4,mid:-1}},{t:"以市府抽驗、下架為主，不上街",fx:{mid:4,agenda:2}},{t:"開記者會加發起聯署",fx:{mob:3,mid:2,agenda:4}}],
     shen:[{t:"跟進黨部，打市長食安會議出席紀錄",fx:{agenda:4,ant:2,mid:1},note:"史實上由黨部提出"},{t:"提出食安把關政見",fx:{mid:3,agenda:2}},{t:"不接這個題",fx:{agenda:-4}}]
   }},
-kmtNom:{at:T(11),actor:"chiang",tag:"real",title:"7月22日・國民黨提名連任",
+kmtNom:{city:"tp",at:T(11),actor:"chiang",tag:"real",title:"7月22日・國民黨提名連任",
   text:{chiang:"中常會正式徵召你們的候選人競選連任。提名之後的節奏？",shen:"對手正式獲提名連任。"},
   src:"報導：國民黨7/22中常會徵召蔣萬安等6位現任縣市長競選連任。另有報導指蔣團隊將選戰定調為「市政延長賽」。",
   choices:{chiang:[{t:"維持市政為主、選戰為次",hist:1,fx:{mid:2}},{t:"提名後立刻跑基層",fx:{mob:3,mor:2,slots:-2}}]}},
-rally725:{at:T(11),actor:"chiang",tag:"real",cond:()=>S.flags.has("oilRally"),title:"7月25日・凱道集會",
+rally725:{city:"tp",at:T(11),actor:"chiang",tag:"real",cond:()=>S.flags.has("oilRally"),title:"7月25日・凱道集會",
   text:{chiang:"凱道集會當天。黨主席在同一地點辦了另一個口號的集會，媒體在問藍營是否有心結。",shen:"對手陣營今天上凱道。要怎麼回應？"},
   src:"報導：國民黨主席鄭麗文宣布7/25同日同地舉辦另一場集會，引發藍營內部是否有心結的揣測。",
   choices:{
     chiang:[{t:"台上全力衝高聲勢",fx:{mob:6,ant:4,mor:2}},{t:"把訴求控制在食安",fx:{mid:2,mob:3}},{t:"主動與黨中央同框化解雜音",fx:{fav:1,mid:1,mob:2}}],
     shen:[{t:"批評把食安政治化",fx:{mob:2,ant:1}},{t:"提出具體食安政策對比",fx:{mid:3,agenda:2}},{t:"不回應",fx:{}}]
   }},
-usTrip:{at:T(12),actor:"shen",tag:"real",title:"7月下旬・訪美行程",
+usTrip:{city:"tp",at:T(12),actor:"shen",tag:"real",title:"7月下旬・訪美行程",
   text:{shen:"已經排好8天7夜訪美。一週不在台北，但能累積國際形象。",chiang:"對手訪美8天，回國當天開成果記者會。"},
   src:"報導：沈伯洋結束8天7夜訪美後於7/30開成果記者會；蔣萬安同日出席台美產業活動，與AIT處長同台。",
   choices:{
     shen:[{t:"照計畫訪美8天",hist:1,flag:"usTrip",fx:{mid:3,agenda:2,slots:-10}},{t:"縮短成3天",fx:{mid:1,slots:-4}},{t:"取消，留在台北",fx:{mor:1}}],
     chiang:[{t:"同日出席台美產業活動，與AIT處長同台",hist:1,cond:()=>S.flags.has("usTrip"),fx:{mid:2,agenda:3}},{t:"批評對手不在台北",fx:{mob:2,ant:2}},{t:"不評論",fx:{}}]
   }},
-policy:{at:T(19),actor:"shen",tag:"real",title:"9月中・第一份大政見",
+policy:{city:"tp",at:T(19),actor:"shen",tag:"real",title:"9月中・第一份大政見",
   text:{shen:"政策團隊準備好第一份大政見。先發哪一份？",chiang:"對手發表大型政見。怎麼回應？"},
   src:"報導：沈伯洋9/16發表交通政見，聚焦綠色通勤與8年內完成國小通學區；蔣萬安回應通學區持續在做，並舉交通安全評比。",
   choices:{
     shen:[{t:"交通：綠色通勤、8年完成國小通學區",hist:1,flag:"pTraffic",fx:{mid:3,agenda:5}},{t:"居住：租屋與社宅",flag:"pHouse",fx:{mid:3,agenda:4}},{t:"長照與高齡",fx:{mid:3,agenda:3}}],
     chiang:[{t:"以交通安全評比與既有成果回應",hist:1,fx:{mid:2,agenda:2}},{t:"推出新交通政策搶議題",fx:{fund:-3,agenda:5,mid:1}},{t:"批評對手政見不可行",fx:{ant:2,agenda:1}}]
   }},
-cLaunch:{at:T(21),actor:"chiang",tag:"real",title:"9月29日・啟動競選模式",
+cLaunch:{city:"tp",at:T(21),actor:"chiang",tag:"real",title:"9月29日・啟動競選模式",
   text:{chiang:"倒數60天。要怎麼啟動競選連任辦公室？",shen:"對手成立競選連任辦公室，主視覺「台北安可」。"},
   src:"報導：蔣萬安競選連任辦公室9/29成立，由前市府副發言人葉向媛任主任，主視覺為「台北安可」。",
   choices:{chiang:[{t:"成立年輕團隊的辦公室，推出「台北安可」主視覺",hist:1,fx:{mob:4,mor:3,mid:1}},{t:"低調運作，維持市政形象",fx:{mid:2,mob:-1}},{t:"直接辦大型成立大會",fx:{fund:-4,mob:7,fav:-1}}]}},
-ocean:{at:T(21),actor:"shen",tag:"real",title:"9月30日・掃街要怎麼辦",
+ocean:{city:"tp",at:T(21),actor:"shen",tag:"real",title:"9月30日・掃街要怎麼辦",
   text:{shen:"團隊提案：把車掃和市政開講包裝成「台北大洋流」，支持者在LINE領線上船員證、加入分區艦隊。",chiang:"對手推出「台北大洋流」，線上船員證幾天內有十幾萬人領取。"},
   src:"報導：「台北大洋流」9/30啟動，支持者在官方LINE領線上船員證、加入分區艦隊；截至10/3已逾16萬人領取。",
   choices:{
     shen:[{t:"推出「台北大洋流」",hist:1,flag:"ocean",fx:{mob:10,mor:5,agenda:5}},{t:"傳統車掃",fx:{mob:5}},{t:"只做線上活動",fx:{agenda:4,mob:2}}],
     chiang:[{t:"不評論，照市政行程",fx:{mid:1}},{t:"批評車隊擾民",fx:{ant:2,mob:2,agenda:2}},{t:"推出自己的線上支持者活動",fx:{fund:-2,mob:4,agenda:2}}]
   }},
-shenHQ:{at:T(22),actor:"shen",tag:"real",title:"10月4日・競總成立大會",
+shenHQ:{city:"tp",at:T(22),actor:"shen",tag:"real",title:"10月4日・競總成立大會",
   text:{shen:"競總成立大會。要用多少大咖人情？",chiang:"對手競總成立，府院黨高層全員到齊，主辦宣稱12萬人。"},
   src:"報導：沈伯洋競總10/4成立，總統、前總統、副總統、閣揆等出席，主辦單位宣布現場超過12萬人。",
   choices:{
     shen:[{t:"大型成立大會，請府院黨高層全數站台",hist:1,need:()=>ME().fav>=2,fx:{fav:-2,mob:9,mor:5,ant:2}},{t:"中型規模，主打市民代表",fx:{mob:5,mid:2}},{t:"延後到選前",fx:{mor:-2}}],
     chiang:[{t:"質疑人數灌水",fx:{ant:2,agenda:1}},{t:"不評論",fx:{mid:1}}]
   }},
-oldRemarks:{at:T(22),actor:"chiang",tag:"real",title:"10月初・舊言論攻防",
+oldRemarks:{city:"tp",at:T(22),actor:"chiang",tag:"real",title:"10月初・舊言論攻防",
   text:{chiang:"藍營有人翻出對手過去關於「社區提供毒品」的論述。要不要跟著打？",shen:"對手陣營翻出候選人過去關於「社區提供毒品」的論述。怎麼回應？"},
   src:"報導：藍營翻出沈伯洋過去關於「社區提供毒品」的論述攻擊；有評論者認為原論述是在介紹各國政策模式，雙方說法各異。遊戲不判斷是非。",
   choices:{
     chiang:[{t:"持續追打對手過去的論述",hist:1,neg:1,fx:{agenda:6,mob:3,ant:3}},{t:"點到為止",fx:{agenda:2}},{t:"不碰，專注政績",fx:{mid:2}}],
     shen:[{t:"完整說明當年論述的政策背景",fx:{mid:2,agenda:2,mor:-1}},{t:"把焦點轉到醫療院所的替代治療",fx:{agenda:-3,mid:-1}},{t:"反擊對手斷章取義",fx:{mob:3,ant:2}}]
   }},
-minquan:{at:T(23),actor:"shen",tag:"real",cond:()=>S.flags.has("ocean"),title:"10月中・大洋流的副作用",
+minquan:{city:"tp",at:T(23),actor:"shen",tag:"real",cond:()=>S.flags.has("ocean"),title:"10月中・大洋流的副作用",
   text:{shen:"上一場大洋流引發塞車和鞭炮的抱怨。10/18那場要怎麼辦？",chiang:"對手調整大洋流活動：改地點、不開放跟車與鞭炮。"},
   src:"報導：首場活動後出現塞車與鞭炮抱怨，陣營宣布10/18市政開講改至民權公園，不開放跟車、不放鞭炮。",
   choices:{shen:[{t:"改到民權公園，不開放跟車、不放鞭炮",hist:1,fx:{ant:-3,mob:-1,mid:2}},{t:"照原規劃",fx:{mob:3,ant:4},then:{in:1,id:"trafficBack"}}]}},
@@ -554,17 +631,93 @@ eve:{at:D(11,27),tag:"common",title:"11月27日・選前之夜",text:"最後一�
   choices:{both:[
     {t:"全市大型造勢",fx:{fund:-5,mob:8,mor:5},rand:[{p:.25,fx:{mor:-6,mob:-3},log:"下起大雨，人數比預期少。"},{p:.75,fx:{},log:"現場擠滿人，直播同時上線人數創新高。"}]},
     {t:"分區小型掃街到最後一刻",fx:{shift:.4,mob:3}},
-    {t:"直播加電話催票",fx:{mob:4,mid:2}}
+    {t:"直播加電話催票",fx:{mob:4,mid:2}},
+    {t:"雙北同黨聯合造勢",need:()=>ME().fav>=1,fx:{fav:-1,mob:6,mor:3,ocShift:.4}}
   ]}},
 vote:{at:LAST,tag:"rule",title:"11月28日・投票日",text:"投票所早上8點開門、下午4點關門。依法，投票日不能從事任何競選或助選活動。你能做的只有等。",
   src:"公職人員選舉罷免法：投票日不得從事競選或助選活動。",
   choices:{both:[{t:"回競總，等開票",fx:{}}]}},
+/* ---------- 新北真實事件與雙北連動 ---------- */
+tppHQnt:{city:"nt",at:T(4),actor:"chiang",tag:"real",title:"6月6日・藍白同台",
+  text:{chiang:"民眾黨把黃國昌原本的新北競總，轉型成民眾黨議員聯合競總暨李四川後援會，邀你出席成立大會。",shen:"對手和民眾黨在新莊合辦後援會成立大會，藍白同台。"},
+  src:"報導：民眾黨6/6在新莊原黃國昌競總舉行新北市議員聯合競總暨李四川後援會成立大會，黃國昌、柯文哲出席。",
+  choices:{chiang:[{t:"出席同台，展現藍白合作",hist:1,fx:{shift:.6,mob:3,mid:-1}},{t:"派副手出席",fx:{shift:.3}},{t:"以行程衝突婉拒",fx:{mid:1,mob:-2}}],
+    shen:[{t:"批評藍白合是政治分贓",fx:{mob:2,ant:2}},{t:"爭取對藍白合不滿的中間選民",fx:{mid:2,shift:.3}},{t:"不回應",fx:{}}]}},
+seatRow:{city:"nt",at:T(9),actor:"ext",tag:"real",title:"7月・同坐風波",
+  text:{chiang:"你和對手同場出席中藥商公會活動，主辦單位把兩人的座位排在一起。",shen:"你和對手同場出席中藥商公會活動，對手沒有和你坐在一起，事後還說你遲到。"},
+  src:"報導：李四川與蘇巧慧7月同場出席中藥商公會活動，李被拍到未與蘇同坐並稱蘇遲到；蘇巧慧表示她早已抵達，是在旁等候李受訪。",
+  choices:{chiang:[{t:"不同坐，事後說明是對方遲到",hist:1,fx:{mob:1,mid:-2}},{t:"主動招呼對手同坐",fx:{mid:2}},{t:"不回應媒體",fx:{}}],
+    shen:[{t:"還原現場，強調尊重主辦安排",hist:1,fx:{mid:2}},{t:"批評對手沒風度",fx:{mob:2,ant:2}},{t:"不回應",fx:{}}]}},
+oilNT:{city:"nt",at:T(10),tag:"common",title:"食安風暴延燒到新北",text:"致癌油事件延燒，新北市民也在問市府的稽查做得夠不夠。",
+  choices:{chiang:[{t:"要求市府全面抽驗並公布結果",fx:{mid:3,agenda:2}},{t:"跟進批評中央處理失當",fx:{mob:3,ant:2,agenda:3}},{t:"不接這個題",fx:{agenda:-3}}],
+    shen:[{t:"提出食安把關政見",fx:{mid:3,agenda:2}},{t:"批評市府稽查不力",fx:{agenda:3,ant:2}},{t:"不接這個題",fx:{agenda:-3}}]}},
+suHQ:{city:"nt",at:T(17),actor:"shen",tag:"real",title:"9月5日・板橋競總成立",
+  text:{shen:"競總成立大會。要用多少大咖人情？民進黨的人情池和台北共用。",chiang:"對手在板橋成立競總，總統、前總統、高雄市長站台。"},
+  src:"報導：蘇巧慧9/5在板橋第一運動場成立競總，賴清德、蔡英文（競總主委）、陳其邁站台；同日李四川與蔣萬安在板橋合體拜票。",
+  choices:{shen:[{t:"大型成立大會，請總統、前總統、高雄市長站台",hist:1,need:()=>ME().fav>=2,fx:{fav:-2,mob:9,mor:5,ant:2}},{t:"中型規模，主打新北市民代表",fx:{mob:5,mid:2}},{t:"延後到選前",fx:{mor:-2}}],
+    chiang:[{t:"同日請台北市長到板橋合體拜票",hist:1,fx:{shift:.5,mob:3}},{t:"照自己的行程",fx:{mor:1}},{t:"批評對手靠大咖撐場",fx:{ant:2,mob:1}}]}},
+yonghe:{city:"nt",at:T(19),actor:"chiang",tag:"real",title:"9月20日・永和聯合競總",
+  text:{chiang:"各區聯合競總陸續啟動。永和這場要主打什麼？",shen:"對手在永和成立聯合競總，提出都更推動委員會與中和光復線。"},
+  src:"報導：李四川9/20出席永和聯合競總，提出成立都更推動委員會並親任召集人、推動捷運中和光復線。",
+  choices:{chiang:[{t:"主打都更與中和光復線",hist:1,fx:{agenda:4,dshift:{i:2,v:.8}}},{t:"主打社福與長照",fx:{mid:2,agenda:2}},{t:"低調辦，不提新政見",fx:{mob:1}}],
+    shen:[{t:"提出雙和居住安全對案",fx:{agenda:3,dshift:{i:2,v:.4}}},{t:"質疑都更承諾的時程",fx:{ant:1,agenda:2}},{t:"不回應",fx:{}}]}},
+leePolicy:{city:"nt",at:T(21),actor:"chiang",tag:"real",title:"10月3日・軌道與產業政見",
+  text:{chiang:"政策團隊準備好交通與產業的大政見。",shen:"對手提出大漢溪捷運縱貫線、AI 科技產業廊帶等政見。"},
+  src:"報導：李四川10/3提出大漢溪捷運縱貫線、AI 科技產業廊帶及輕軌等政見。",
+  choices:{chiang:[{t:"推出大漢溪捷運縱貫線與 AI 產業廊帶",hist:1,fx:{agenda:5,mid:2}},{t:"主打延續侯市府政績",fx:{mid:3}},{t:"先不發，留到辯論",fx:{}}],
+    shen:[{t:"質疑財源與時程",fx:{agenda:2,ant:1}},{t:"推出自己的軌道政見對打",fx:{fund:-2,agenda:4}},{t:"不回應",fx:{}}]}},
+leeRally:{city:"nt",at:T(21),actor:"chiang",tag:"real",title:"10月4日・大型造勢",
+  text:{chiang:"大型造勢要請哪些大咖？國民黨的人情池和台北共用。",shen:"對手大型造勢，侯友宜、蔣萬安、韓國瑜預定站台。"},
+  src:"報導指李四川預定10/4舉辦大型造勢，侯友宜、蔣萬安、韓國瑜等站台；同一天台北的沈伯洋競總成立。",
+  choices:{chiang:[{t:"請侯友宜、蔣萬安、韓國瑜全數站台",hist:1,need:()=>ME().fav>=2,fx:{fav:-2,mob:8,mor:4,ant:2}},{t:"只請侯市長",need:()=>ME().fav>=1,fx:{fav:-1,mob:5,mid:1}},{t:"改成分區小型活動",fx:{mob:3,mid:1}}],
+    shen:[{t:"同日辦分區掃街搶版面",fx:{slots:-1,mob:2}},{t:"批評對手靠台北大咖",fx:{ant:2,mob:1}},{t:"不回應",fx:{}}]}},
+banqiao:{city:"tp",at:T(17),actor:"chiang",tag:"real",title:"9月5日・板橋合體",
+  text:{chiang:"新北的李四川邀你到板橋合體拜票。去的話，台北這週少一格行程，但能拉抬新北的隊友。",shen:"對手到板橋為新北的國民黨參選人站台。"},
+  src:"報導：9/5李四川與台北市長蔣萬安在板橋合體，到宮廟參拜、市場拜票，雙北連線互相拉抬。",
+  choices:{chiang:[{t:"到板橋合體拜票",hist:1,fx:{slots:-1,mob:1,ocShift:.5}},{t:"留在台北",fx:{mor:1}}]}},
+commute:{pool:1,win:[T(10),D(11,24)],tag:"common",title:"雙北通勤議題",text:"捷運環狀線與雙北通勤時間成為熱門話題，兩市候選人都被問到跨市交通。",
+  choices:{both:[{t:"和鄰市同黨候選人聯合發表雙北交通政見",fx:{slots:-1,agenda:4,ocShift:.3}},{t:"只談自己城市的交通",fx:{agenda:2}},{t:"不接這個題",fx:{agenda:-3}}]}},
+/* ---------- 虛構重大事件 ---------- */
+pileup:{pool:1,major:1,w:{shen:.6,chiang:.6},win:[T(6),D(11,25)],tag:"fiction",title:"連環車禍",
+  pre(){S.majSite.pileup=Math.floor(R()*6)},
+  text:{get shen(){return `${DN(S.majSite.pileup)}的快速道路清晨發生多車連環追撞，造成多人死傷。全市的目光都在這件事上，各陣營都被追問要不要暫停行程。`},get chiang(){return `${DN(S.majSite.pileup)}的快速道路清晨發生多車連環追撞，造成多人死傷。市府的路口設計與號誌管理被拿出來檢視，你們首當其衝。`}},
+  choices:{
+    chiang:[{t:"暫停所有競選活動，到醫院探視並要求全面檢討路口與號誌",fx:{slots:-2,mid:3,mor:-1}},{t:"照常行程，只發哀悼聲明",rand:[{p:.5,fx:{mid:-4},log:"被批評冷漠，照常拜票的畫面被拿來和事故新聞並排比較。"},{p:.5,fx:{},log:"沒有引起太多批評。"}]},{t:"說明責任在駕駛與中央公路單位",fx:{ant:2},rand:[{p:.6,fx:{mid:-4,agenda:-4},log:"輿論認為在推卸責任。"},{p:.4,fx:{mid:-1},log:"說法部分被接受。"}]}],
+    shen:[{t:"暫停造勢，發哀悼聲明",fx:{slots:-1,mid:3,mor:-1}},{t:"提出道路安全政策，不點名市府",fx:{agenda:3,mid:1}},{t:"批評市府交通管理失職",fx:{agenda:4,ant:3},rand:[{p:.5,fx:{mid:-5},log:"被批評消費悲劇。"},{p:.5,fx:{agenda:2},log:"道路安全成為接下來幾天的焦點。"}]}]
+  }},
+stabbing:{pool:1,major:1,w:{shen:.5,chiang:.5},win:[T(6),D(11,25)],tag:"fiction",title:"捷運站隨機傷人",
+  pre(){S.majSite.stabbing=Math.floor(R()*6)},
+  text:{get shen(){return `${DN(S.majSite.stabbing)}的捷運站發生隨機傷人事件，多人受傷送醫，嫌犯當場被制伏。整座城市都很不安。`},get chiang(){return `${DN(S.majSite.stabbing)}的捷運站發生隨機傷人事件，多人受傷送醫，嫌犯當場被制伏。整座城市都很不安，市府的安全管理也被追問。`}},
+  choices:{
+    chiang:[{t:"當日停止一切競選活動，陳同市府到現場關心",fx:{slots:-1,mid:3}},{t:"要求加強捷運站警力與安全巡查",fx:{fund:-2,mid:2,agenda:2}},{t:"把事件連結到對手的政策主張",fx:{ant:4},rand:[{p:.6,fx:{mid:-5},log:"被批評利用傷害事件攻擊對手。"},{p:.4,fx:{mob:3},log:"支持者認同，但中間選民沒有買單。"}]}],
+    shen:[{t:"當日停止一切競選活動，發表慰問",fx:{slots:-1,mid:3}},{t:"提出治安與社會安全網政策",fx:{agenda:4,slots:-1}},{t:"把事件連結到市府的治安管理",fx:{ant:4},rand:[{p:.6,fx:{mid:-5},log:"被批評利用傷害事件攻擊對手。"},{p:.4,fx:{mob:3},log:"支持者認同，但中間選民沒有買單。"}]}]
+  }},
+floodMajor:{pool:1,major:1,win:[T(8),T(22)],tag:"fiction",title:"豪雨成災",
+  pre(){const i=Math.floor(R()*6);S.majSite.floodMajor=i;const v=S.flags.has("infraWeak")?2.5:1.2;S.dist.forEach((d,j)=>shiftDist(d,j===i?v*1.5:v));S.oc.dist.forEach(d=>shiftDist(d,v*.3));S.flags.add("infraWeak");},
+  text:{get chiang(){return `滯留鋒面帶來豪雨，${DN(S.majSite.floodMajor)}多處淹水、地下道積水，上千戶停電。市府的防汛整備被罵翻，你們的支持度已經先掉了一截。`},get shen(){return `滯留鋒面帶來豪雨，${DN(S.majSite.floodMajor)}多處淹水、地下道積水，上千戶停電。市府被罵翻，對手的支持度先掉了一截。你們要怎麼做？`}},
+  choices:{
+    chiang:[{t:"候選人連夜到災區，督促抽水與復電進度",fx:{slots:-2,mid:3,shift:.8}},{t:"說明降雨遠超設計標準",fx:{mid:-3}},{t:"宣布災後補助方案",fx:{fund:-3,mid:2,shift:.5}}],
+    shen:[{t:"帶志工到災區清淞、送物資",fx:{slots:-2,mid:4,mob:2}},{t:"痛批市府防汛失靈",fx:{agenda:4,ant:2},rand:[{p:.35,fx:{mid:-3},log:"被批評災區還在積水就急著打選戰。"},{p:.65,fx:{agenda:2},log:"防汛檢討成為熱門話題。"}]},{t:"提出治水與下水道政見",fx:{agenda:3,mid:1}}]
+  }},
+cnMeddle:{pool:1,major:1,win:[T(12),D(11,26)],tag:"fiction",title:"境外勢力介選",
+  pre(){S.cnTarget=R()<.5?"shen":"chiang";const k=S.cnTarget;S.dist.forEach(d=>shiftDist(d,-sgn(k)*1.2));},
+  text:{get shen(){return cnText()},get chiang(){return cnText()}},
+  choices:{get shen(){return cnChoices()},get chiang(){return cnChoices()}}},
+influencer:{pool:1,major:1,win:[T(8),D(11,26)],tag:"fiction",title:"挺你們的網紅扯後腿",
+  text:"一位虛構的挺你們網紅，為了衝流量拍了一支嘲諷對手支持者的影片，標題聳動，正在瘋傳。對手陣營把它當成你們的代表作，中間選民開始反感。",
+  pre(){applyFx({ant:4,mid:-2},S.me)},
+  choices:{both:[
+    {t:"立刻公開切割，請他下架",fx:{mob:-2,mid:3,ant:-3},rand:[{p:.3,fx:{mor:-3,mob:-2},log:"網紅開直播反咬你們忘恩負義，粉絲在群組吵成一團。"},{p:.7,fx:{},log:"影片下架，風頭慢慢過去。"}]},
+    {t:"私下請他收斂",rand:[{p:.5,fx:{mid:-4,ant:3},log:"他沒收斂，下一支影片更誇張。"},{p:.5,fx:{ant:-2},log:"他改拍政策懶人包，風向回穩。"}]},
+    {t:"轉發說只是幽默",fx:{mob:3,ant:5,mid:-4}},
+    {t:"不回應",fx:{ant:3,mid:-2}}
+  ]}},
 /* ---------- fiction (pool) ---------- */
 typhoon:{pool:1,win:[T(8),T(24)],tag:"common",title:"颱風逼近",
-  text:{chiang:"週四晚上要決定隔天是否停班停課。預報雨量落在邊緣。",shen:"颱風逼近，週末的大型活動要不要取消？"},
+  text:{chiang:"週四晚上要決定隔天是否停班停課。預報雨量落在邊緣。",chiang_nt:"颱風逼近，侯市府要決定隔天是否停班停課。外界在看你們這位市政接班人怎麼表態。",shen:"颱風逼近，週末的大型活動要不要取消？"},
   choices:{
     chiang:[{t:"宣布停班停課",rand:[{p:.5,fx:{mid:-3},log:"結果幾乎沒下雨，網路上一片「放颱風假浪費一天」。"},{p:.5,fx:{mid:3},log:"當天風雨很大，市民覺得判斷正確。"}]},
-      {t:"照常上班上課",rand:[{p:.3,fx:{mid:-8,agenda:-6},log:"通勤時段發生路樹倒塌事故，成為市政危機。"},{p:.7,fx:{mid:1},log:"平安度過。"}]},
+      {t:"照常上班上課",rand:[{p:.3,flag:"infraWeak",fx:{mid:-8,agenda:-6},log:"通勤時段發生路樹倒塌事故，成為市政危機。"},{p:.7,fx:{mid:1},log:"平安度過。"}]},
       {t:"部分行政區停班停課",fx:{mid:1}}],
     shen:[{t:"取消活動",fx:{mor:-3,mid:2}},{t:"照辦",rand:[{p:.3,fx:{mid:-5,ant:2},log:"有支持者受傷，被批評不顧安全。"},{p:.7,fx:{mob:4},log:"風雨中的造勢反而凝聚了士氣。"}]},{t:"改成線上直播",fx:{agenda:2,mor:-1}}]
   }},
@@ -585,11 +738,11 @@ drill:{pool:1,win:[T(8),D(11,22)],tag:"fiction",title:"臨時軍演",text:"中�
     chiang:[{t:"呼籲兩岸和平穩定",fx:{mid:2,mob:1}},{t:"聚焦市府防災整備",fx:{mid:2,agenda:1}},{t:"批評中央兩岸政策",fx:{mob:3,ant:2}}]}},
 mrt:{pool:1,win:[T(6),D(11,24)],tag:"fiction",title:"捷運尖峰停駛",
   text:{chiang:"捷運某路線號誌故障，尖峰時段停駛兩小時。",shen:"市府管轄的捷運號誌故障，尖峰停駛兩小時。"},
-  choices:{chiang:[{t:"市長親赴現場並公開道歉",fx:{mid:2,slots:-1}},{t:"由捷運公司說明",fx:{mid:-3}},{t:"宣布全面體檢號誌系統",fx:{fund:-2,mid:3}}],
+  choices:{chiang:[{t:"市長親赴現場並公開道歉",fx:{mid:2,slots:-1}},{t:"由捷運公司說明",flag:"infraWeak",fx:{mid:-3}},{t:"宣布全面體檢號誌系統",fx:{fund:-2,mid:3}}],
     shen:[{t:"到現場關心通勤族",fx:{slots:-1,agenda:3,mid:1}},{t:"發文批評市府管理",fx:{agenda:3,ant:2}},{t:"不碰這題",fx:{mid:1}}]}},
 flood:{pool:1,win:[T(8),T(16)],tag:"fiction",title:"午後暴雨淹水",
   text:{chiang:"午後暴雨，三個里淹水。",shen:"午後暴雨，市內三個里淹水。"},
-  choices:{chiang:[{t:"親自視察並加速補助",fx:{slots:-1,mid:3,fund:-1}},{t:"說明是降雨強度超標",fx:{mid:-2}}],
+  choices:{chiang:[{t:"親自視察並加速補助",fx:{slots:-1,mid:3,fund:-1}},{t:"說明是降雨強度超標",flag:"infraWeak",fx:{mid:-2}}],
     shen:[{t:"帶志工去清淤",fx:{slots:-1,mid:3,mob:1}},{t:"批評治水不力",fx:{agenda:3,ant:2}},{t:"不碰這題",fx:{}}]}},
 groupchaos:{pool:1,win:[T(16),D(11,26)],tag:"common",title:"支持者群組失控",text:"支持者群組有人號召到對手活動外面「嗆聲」，已經有幾十人+1。",
   choices:{both:[{t:"公開勸阻",fx:{mor:-1,ant:-3,mid:1}},{t:"不表態",then:{in:1,id:"heckleNews"}}]}},
@@ -616,6 +769,24 @@ infight:{pool:1,cond:()=>S.lastPollGap!==null&&S.lastPollGap*sgn(S.me)<-10,tag:"
 votebuy:{pool:1,win:[D(11,18),D(11,26)],tag:"rule",title:"走路工傳聞",text:"地方傳出走路工傳聞，指向你們這一方的樁腳。",
   src:"刑法與選罷法對賄選設有刑責，檢方選前會成立查察小組。",
   choices:{both:[{t:"公開要求檢調查辦，與相關人切割",fx:{mid:2,mor:-2}},{t:"私下處理",rand:[{p:.5,fx:{mid:-8,mor:-4},log:"傳聞被媒體證實，成為選前最後一週的頭條。"},{p:.5,fx:{},log:"傳聞沒有延燒。"}]}]}},
+silentLabel:{tag:"common",title:"「神隱」標籤",text:"連續好幾次對爭議不回應之後，媒體開始用「神隱」形容候選人，支持者也在群組裡問：「為什麼都不說話？」",
+  choices:{both:[
+    {t:"開記者會，一次回應所有問題",fx:{slots:-2,mid:2,mob:1},silence:-4},
+    {t:"上一個長時間專訪把話說清楚",fx:{slots:-1,mid:1,mob:2},silence:-3},
+    {t:"繼續低調，專心跑行程",fx:{mid:-4,mob:-3,mor:-2}}
+  ]}},
+trustCrash:{tag:"fiction",major:1,title:"信任崩盤",
+  text:{get shen(){return tcText()},get chiang(){return tcText()}},
+  src:"重大事件（虛構情節）。觸發條件：該陣營的負面操作曾被踢爆或遭檢方分案；激起的反感過高；議題主導權連續三回合在對手手上；團隊士氣低落；在選前兩個多月內。五項同時成立才有機會發生，兩個陣營都可能碰上。",
+  choices:{get shen(){return tcChoices()},get chiang(){return tcChoices()}}},
+sinkhole:{tag:"fiction",major:1,title:"城市天坑",
+  text:{get chiang(){return `${DN(S.bsSite)}一條主要幹道深夜突然塌陷出巨大天坑，一輛機車跌落，騎士送醫。畫面一小時內傳遍全網，市民開始翻出過去幾個月的淹水、停駛紀錄。你們的支持度一夕重挫約10個百分點，${DN(S.bsSite)}更重。現在只能決定怎麼止血。`},
+        get shen(){return `${DN(S.bsSite)}一條主要幹道深夜突然塌陷出巨大天坑，一輛機車跌落，騎士送醫。市民開始翻出過去幾個月的淹水、停駛紀錄，對手的支持度一夕重挫約10個百分點。你們要怎麼接？`}},
+  src:"重大事件（虛構情節）。觸發條件：市府曾在淹水、颱風或捷運事件處理失分；在選前兩個多月內；挑戰方連續三回合掌握議題主導權；現任方中間選民觀感偏弱；挑戰方近兩回合在同一區密集掃街。五項同時成立才有機會發生。",
+  choices:{
+    chiang:[{t:"市長當晚到現場坐鎮，公開道歉並宣布全市路面總體檢",fx:{slots:-2,mid:3,shift:1.5,fund:-3}},{t:"先查清責任歸屬再對外說明",fx:{mid:-3,agenda:-6}},{t:"指出是包商施工與管線單位的問題",fx:{ant:3,mob:2},rand:[{p:.5,fx:{mid:-4,agenda:-4},log:"輿論認為市府在推卸責任，風向更糟。"},{p:.5,fx:{},log:"說法有部分人接受，但沒能止血。"}]}],
+    shen:[{t:"到現場關心傷者，提出路面安全體檢方案",fx:{slots:-1,agenda:5,mid:2}},{t:"全力猛攻市府失能",fx:{mob:4,ant:4},rand:[{p:.3,fx:{mid:-3,shift:-1},log:"被批評消費災難，部分中間選民反感。"},{p:.7,fx:{agenda:4},log:"市府失能成為接下來幾天的唯一話題。"}]},{t:"克制發言，呼籲先救人、先修路",fx:{mid:3}}]
+  }},
 collapse:{tag:"common",half:1,title:"候選人累倒",
   text:"連續好幾週幾乎沒有休息，候選人今天在行程中頭暈不適，被送往醫院。醫生要求至少休養一週：接下來一週的行程格數減半。",
   choices:{both:[
@@ -624,14 +795,14 @@ collapse:{tag:"common",half:1,title:"候選人累倒",
     {t:"請副手與大咖代打行程",need:()=>ME().fav>=1,fx:{fav:-1,mob:2},half:1}
   ]}},
 /* ---------- 民眾黨與小黨聯盟 ---------- */
-tppPact:{at:T(11),actor:"ext",tag:"real",title:"藍白合作協議",
+tppPact:{city:"tp",at:T(11),actor:"ext",tag:"real",title:"藍白合作協議",
   text:{chiang:"國民黨依藍白合作協議「現任優先」原則完成提名。民眾黨在台北傾向支持你們，但要走多近？",shen:"藍白合作協議下，民眾黨在台北傾向支持對手。但民眾黨支持者裡，也有人對藍白合不滿。"},
   src:"報導：國民黨7/22中常會說明，依藍白兩黨簽署的2026年聯合治理暨地方選舉合作協議，共同推舉以現任者優先為原則。TVBS 5月民調顧示民眾黨認同者約9成支持蔣萬安。",
   choices:{
     chiang:[{t:"邀民眾黨市議員參選人同台",fx:{shift:.6,mob:2,mid:-1}},{t:"保持距離，主打跨黨派市政",fx:{mid:2}},{t:"要求民眾黨正式表態助選",need:()=>ME().fav>=1,fx:{fav:-1,shift:.9,ant:2}}],
     shen:[{t:"爭取對藍白合不滿的白營選民",fx:{mid:2,agenda:2,shift:.3}},{t:"批評藍白合是分贓政治",fx:{mob:2,ant:2}},{t:"不碰這題",fx:{}}]
   }},
-thirdVoters:{pool:1,win:[T(15),T(26)],tag:"common",title:"上屆的第三勢力選民",
+thirdVoters:{pool:1,cond:()=>S.city==="tp",win:[T(15),T(26)],tag:"common",title:"上屆的第三勢力選民",
   text:"2022年投給第三勢力候選人的選民，這次沒有自己的人選，是關鍵的搖擺票。要怎麼爭取？",
   src:"2022年台北市長選舉，第三勢力候選人拿下約四分之一的選票。",
   choices:{
@@ -639,13 +810,13 @@ thirdVoters:{pool:1,win:[T(15),T(26)],tag:"common",title:"上屆的第三勢力�
     shen:[{t:"主攻上屆投第三勢力的選民，談政策不談藍綠",fx:{mid:3,shift:.5}},{t:"邀小黨聯盟一起爭取",fx:{shift:.4,mob:1,agenda:1}},{t:"不特別處理",fx:{}}]
   }},
 tppRally:{pool:1,win:[T(18),T(27)],tag:"fiction",title:"白營的動向",
-  text:{chiang:"民眾黨台北的市議員參選人（虛構）邀候選人出席聯合造勢。去了能鞘固白營票，但部分中間選民反感藍白合。",shen:"一位對藍白合不滿的民眾黨基層幹部（虛構）私下釋出善意。"},
+  text:{chiang:"民眾黨的市議員參選人（虛構）邀候選人出席聯合造勢。去了能鞘固白營票，但部分中間選民反感藍白合。",shen:"一位對藍白合不滿的民眾黨基層幹部（虛構）私下釋出善意。"},
   choices:{
     chiang:[{t:"出席同台",fx:{slots:-1,shift:.6,mob:2,mid:-1}},{t:"派副手出席",fx:{shift:.3}},{t:"婉拒",fx:{mid:1,mob:-1}}],
     shen:[{t:"低調接觸",fx:{shift:.3}},{t:"公開歡迎加入",rand:[{p:.6,fx:{shift:.6,mid:1},log:"消息傳開，吸引一些白營選民關注。"},{p:.4,fx:{ant:2,mid:-1},log:"對方被指控「叛逃」，反而激起白營反彈。"}]},{t:"婉拒，避免介入他黨內部",fx:{mid:1}}]
   }},
 smallDeal:{pool:1,win:[T(13),T(24)],tag:"fiction",title:"小黨聯盟的條件",
-  text:{shen:"小黨聯盟（遊戲設定，泛指台北的進步派與本土派小黨）在台北傾向支持你們，但提出政策交換條件，換取公開背書。",chiang:"小黨聯盟（遊戲設定）傳出要公開支持對手。"},
+  text:{shen:"小黨聯盟（遊戲設定，泛指雙北的進步派與本土派小黨）在台北傾向支持你們，但提出政策交換條件，換取公開背書。",chiang:"小黨聯盟（遊戲設定）傳出要公開支持對手。"},
   choices:{
     shen:[{t:"接受部分政見，換取公開背書",fx:{agenda:3,shift:.6,mob:2,mid:1}},{t:"只私下合作，不公開",fx:{shift:.3}},{t:"拒絕，政見不拿來交換",fx:{mor:1,agenda:-1},then:{in:2,id:"smallCold"}}],
     chiang:[{t:"拉攟聯盟裡立場較中間的參選人",fx:{shift:.3,fund:-1}},{t:"批評小黨被綠營收編",fx:{mob:2,ant:2}},{t:"不回應",fx:{}}]
@@ -685,7 +856,7 @@ const POOL=Object.keys(EV).filter(k=>EV[k].pool);
 /* ---------- final two weeks: repeatable & late events ---------- */
 const LATE_START=D(11,15),LATE_END=D(11,27);
 const ISSUES=["長照","社宅與租金","停車","公托","治安","學童通學安全"];
-const DN=i=>DIST0[i].name;
+const DN=i=>S.dist[i].name;
 Object.assign(EV,{
 lateFake:{late:1,rep:1,cd:4,tag:"common",title:"長輩群組的假截圖",text:"一張關於候選人的假截圖在長輩LINE群組瘋傳，轉傳速度很快。",
   choices:{both:[{t:"開記者會澄清",fx:{slots:-1,agenda:-2,mid:2}},{t:"送事實查核單位，同步發圖卡",fx:{fund:-1,mid:1}},{t:"不理，相信會自己退燒",rand:[{p:.5,fx:{mid:-3},log:"沒有退燒，反而傳進更多群組。"},{p:.5,fx:{},log:"果然一天就沒人轉了。"}]}]}},
@@ -743,10 +914,12 @@ const AI=[
 ];
 
 /* ============ rendering ============ */
-function txt(v){return typeof v==="string"?v:(v?v[S.me]:"")}
+function txt(v){if(typeof v==="string")return v;if(!v)return "";if(S.city==="nt"&&v[S.me+"_nt"])return v[S.me+"_nt"];return v[S.me]}
+const NT_MAP=[["宣布停班停課","建議市府停班停課"],["照常上班上課","支持照常上班上課"],["部分行政區停班停課","建議部分區停班停課"],["市長親赴現場並公開道歉","陪同侯市長親赴現場並代表市府致歉"],["親自視察並加速補助","陪同市府視察並承諾加速補助"],["市長當晚到現場坐鎮","當晚陪同侯市長到現場坐鎮"]];
+function disp(t){if(S.city==="nt"&&S.me==="chiang")for(const [a,b] of NT_MAP)t=t.replace(a,b);return t}
 function renderBar(){
   const t=TURNS[S.ti];
-  $("#who").textContent=SIDES[S.me].full;
+  $("#who").textContent=CITY[S.city].full+"・"+SF(S.me);$("#tugL").textContent=CITY[S.city].short.chiang+"陣營設定題目";$("#tugR").textContent=CITY[S.city].short.shen+"陣營設定題目";
   $("#when").textContent=tLabel(t);
   $("#r-fund").textContent=Math.round(ME().fund);
   $("#r-fav").textContent=ME().fav;
@@ -761,15 +934,17 @@ function renderNews(){
 }
 function tagName(t){return {real:"真實事件",rule:"真實制度",common:"常見情境",fiction:"虛構情節",ai:"對手動態"}[t]}
 function renderPoll(){
-  const p=S.polls[S.polls.length-1];
-  let h=`<h2>公開民調</h2>`;
+  const p=S.polls[S.polls.length-1],sh=CITY[S.city].short;
+  let h=`<h2>公開民調・${CITY[S.city].full}</h2>`;
   if(!p){h+=`<p><small>還沒有民調發布。</small></p>`}
   else{
     h+=`<div><b>${esc(p.inst)}</b> <small>${esc(p.date)}${p.real?"・真實數據":"・遊戲內虛構機構"}</small></div>
-    <div class="bars"><span class="c" style="width:${p.c}%">蔣 ${p.c.toFixed(0)}</span><span class="u" style="width:${p.u}%">${p.u>=8?"未決 "+p.u.toFixed(0):""}</span><span class="s" style="width:${p.s}%">沈 ${p.s.toFixed(0)}</span></div>`;
+    <div class="bars"><span class="c" style="width:${p.c}%">${sh.chiang} ${p.c.toFixed(0)}</span><span class="u" style="width:${p.u}%">${p.u>=8?"未決 "+p.u.toFixed(0):""}</span><span class="s" style="width:${p.s}%">${sh.shen} ${p.s.toFixed(0)}</span></div>`;
   }
+  {const q=S.oc.polls[S.oc.polls.length-1],so=CITY[S.oc.city];
+   if(q)h+=`<div style="margin-top:10px;font-size:.85rem"><b>鄰市・${so.full}</b> <small>${esc(q.inst)} ${esc(q.date)}</small><div class="bars" style="height:18px"><span class="c" style="width:${q.c}%">${so.short.chiang} ${q.c.toFixed(0)}</span><span class="u" style="width:${q.u}%"></span><span class="s" style="width:${q.s}%">${so.short.shen} ${q.s.toFixed(0)}</span></div></div>`;}
   if(S.ti>=POLL_BAN) h+=`<p><small>民調已封關，之後不再發布。</small></p>`;
-  h+=`<svg id="spark" viewBox="0 0 300 90" preserveAspectRatio="none" role="img" aria-label="民調走勢"></svg><small>各家民調中沈減蔣的差距走勢（零線以上為沈領先）</small>`;
+  h+=`<svg id="spark" viewBox="0 0 300 90" preserveAspectRatio="none" role="img" aria-label="民調走勢"></svg><small>各家民調中${sh.shen}減${sh.chiang}的差距走勢（零線以上為${sh.shen}領先）</small>`;
   $("#pollbox").innerHTML=h;
   drawSpark($("#spark"),S.polls.map(p=>p.s-p.c));
 }
@@ -788,7 +963,7 @@ function renderMap(){
   $("#map").innerHTML=S.dist.map((d,i)=>{
     const iv=S.intel?S.intel[i]:null;
     return `<div class="dist"><h3>${d.name}</h3>
-      <div class="lean">${iv?`蔣 <b>${iv.c.toFixed(0)}</b>　沈 <b>${iv.s.toFixed(0)}</b>　未決 ${iv.u.toFixed(0)}`:"狀況不明"}</div>
+      <div class="lean">${iv?`${CITY[S.city].short.chiang} <b>${iv.c.toFixed(0)}</b>　${CITY[S.city].short.shen} <b>${iv.s.toFixed(0)}</b>　未決 ${iv.u.toFixed(0)}`:"狀況不明"}</div>
       <div class="mini">${iv?`<span class="c" style="width:${iv.c}%"></span><span style="width:${iv.u}%"></span><span class="s" style="width:${iv.s}%"></span>`:""}</div>
       <div class="ctr"><span class="lab">掃街</span><button data-dst="${i}" data-d="-1" aria-label="${d.name}減少一格">−</button><output>${S.plan.street[i]}</output><button data-dst="${i}" data-d="1" aria-label="${d.name}增加一格">+</button></div>
       ${S.opLast&&S.opLast[i]>0?`<span class="opp-mark">對手上回合來過 ${S.opLast[i]} 次</span>`:""}
@@ -825,6 +1000,7 @@ function renderInds(){
   const X=ME();
   const rows=[["mob","基本盤投票意願"],["mid","中間選民觀感"],["ant","你們激起的反感",1],["mor","團隊士氣"]];
   $("#inds").innerHTML=rows.map(([k,t,inv])=>{const v=X[k];const warn=inv?v>65:v<30;return `<div class="ind ${warn?"warn":""}"><div class="row"><span>${t}</span><span>${Math.round(v)}</span></div><div class="tr"><i style="width:${v}%"></i></div></div>`}).join("");
+  if((S.silence||0)>=3)$("#inds").insertAdjacentHTML("beforeend",'<p style="color:var(--alert);font-size:.85rem;margin:.4em 0 0">媒體開始形容你們「神隱」，再不回應，選民會更失望。</p>');
   $("#tugpin").style.left=`calc(${50+S.agenda/2}% - 2px)`;
 }
 function renderAll(){renderBar();renderNews();renderPoll();renderPlan();renderInds();renderLog()}
@@ -833,31 +1009,45 @@ function renderAll(){renderBar();renderNews();renderPoll();renderPlan();renderIn
 function openCard(html){$("#card").innerHTML=html;$("#modal").classList.remove("hidden");const b=$("#card").querySelector("button:not(:disabled)");if(b)b.focus();}
 function closeCard(){$("#modal").classList.add("hidden")}
 function choicesFor(ev,k){const c=ev.choices;if(!c)return null;return c[k]||c.both||null}
+function isPass(c){return !!(c&&(c.pass||PASS_RE.test(c.t)||(c.fx&&Object.keys(c.fx).length===0&&!c.rand&&!c.then)))}
 const PASS_RE=/^(不理|不回應|不接|不碰|不表態|不評論|今晚排不出|什麼都不做|安靜等待|婉拒|推掉|不理會)/;
 let TIMER=null;
 function clearTimer(){if(TIMER){clearInterval(TIMER);TIMER=null}}
 function showEvent(id,done){
-  const ev=EV[id];const list=(choicesFor(ev,S.me)||[]).filter(c=>!c.cond||c.cond());
+  const ev=EV[id];
+  if(ev.pre&&!S.used.has(id+"_pre")){S.used.add(id+"_pre");S.majSite=S.majSite||{};ev.pre();renderInds();}const list=(choicesFor(ev,S.me)||[]).filter(c=>!c.cond||c.cond());
   const hasHist=list.some(c=>c.hist);
-  const timed=S.timerOn&&TURNS[S.ti].k==="day"&&list.length>1;
-  openCard(`<span class="tag ${ev.tag}">${tagName(ev.tag)}</span>
+  const timed=S.timerOn&&TURNS[S.ti].k==="day"&&list.length>1&&!ev.major;
+  openCard(`<span class="tag ${ev.tag}">${tagName(ev.tag)}</span>${ev.major?' <span class="tag" style="background:var(--alert);color:#fff;border-color:var(--alert)">重大事件</span>':""}
     ${timed?'<div class="timer" aria-live="polite"><div class="tbar"><i id="tfill"></i></div><span id="tsec">5</span> 秒內決定，否則視為不作為</div>':""}
     <h3 id="ctitle">${esc(ev.title)}</h3><p>${esc(txt(ev.text))}</p>
     ${ev.src?`<div class="src">${esc(ev.src)}</div>`:""}
-    <div class="choices">${list.map((c,i)=>`<button data-i="${i}" ${c.need&&!c.need()?"disabled":""}>${c.hist?'<span class="tag hist">史實選擇</span> ':""}${esc(c.t)}${c.note?`<small>${esc(c.note)}</small>`:""}${c.need&&!c.need()?"<small>資源不足</small>":""}</button>`).join("")}</div>`);
+    <div class="choices">${list.map((c,i)=>`<button data-i="${i}" ${c.need&&!c.need()?"disabled":""}>${c.hist?'<span class="tag hist">史實選擇</span> ':""}${esc(disp(c.t))}${c.note?`<small>${esc(c.note)}</small>`:""}${c.need&&!c.need()?"<small>資源不足</small>":""}</button>`).join("")}</div>`);
   const choose=(c,timeout)=>{
     clearTimer();
     if(hasHist){c.hist?S.hist++:S.alt++;}
     if(c.neg)S.neg++;
     if(c.flag)S.flags.add(c.flag);
+    if(S.me==="shen"&&["flood","mrt","typhoon"].includes(id)&&R()<.4)S.flags.add("infraWeak");
+    if(id==="law")S.flags.add("lawCase");
     if(c.half||ev.half){const X=ME(),day=TURNS[S.ti].k==="day";X.halfFrom=S.ti+1;X.halfTo=day?Math.min(LAST-1,S.ti+7):S.ti+1;}
     const fic=["fiction","common","ai"].includes(ev.tag);let vnote="";const V=f=>{if(!fic||!f)return f;const r=varyFx(f);if(r.note)vnote=r.note;return r.fx};
     let out=applyFx(V(c.fx),S.me);let msg=c.log||"";
     if(c.then)S.queue.push({ti:S.ti+c.then.in,id:c.then.id});
-    if(c.rand){let r=R(),o=c.rand[c.rand.length-1];for(const x of c.rand){if((r-=x.p)<0){o=x;break}}out=out.concat(applyFx(V(o.fx),S.me));msg=o.log||msg;if(o.then)S.queue.push({ti:S.ti+o.then.in,id:o.then.id});if(o.back)S.negBack++;}
+    if(c.rand){let r=R(),o=c.rand[c.rand.length-1];for(const x of c.rand){if((r-=x.p)<0){o=x;break}}out=out.concat(applyFx(V(o.fx),S.me));msg=o.log||msg;if(o.flag)S.flags.add(o.flag);if(o.then)S.queue.push({ti:S.ti+o.then.in,id:o.then.id});if(o.back)S.negBack++;}
     if(timeout)S.timeouts=(S.timeouts||0)+1;
-    addLog(`${ev.title}：${timeout?"時間到，":""}${c.t}${msg?"。"+msg:""}${vnote?"（"+vnote+"）":""}`);
-    openCard(`<span class="tag ${ev.tag}">${tagName(ev.tag)}</span><h3 id="ctitle">${esc(ev.title)}</h3>${timeout?'<p><b style="color:var(--alert)">時間到，團隊沒有做出決定。</b></p>':""}<p><b>${esc(c.t)}</b></p>${msg?`<p>${esc(msg)}</p>`:""}${vnote?`<p style="color:var(--alert)"><b>${esc(vnote)}</b></p>`:""}${deltaHTML(out)||'<p class="delta">沒有立即的變化。</p>'}${c.then?'<p class="delta">這個決定之後可能還會有後續。</p>':""}<div class="choices"><button class="primary" id="cont">繼續</button></div>`);
+    // 不回應累積：偶爾不接題沒關係，一直裝死選民會失望
+    if(S.ti<LAST&&list.length>1){
+      if(isPass(c)||timeout){
+        S.silence=(S.silence||0)+(ev.tag==="ai"?1.5:1);S.passTotal=(S.passTotal||0)+1;
+        const k=S.silence;
+        if(k>=2){const pen={mid:-Math.min(4,.5*(k-1)),mob:-Math.min(3,.35*(k-1))};out=out.concat(applyFx(pen,S.me));vnote=(vnote?vnote+" ":"")+"不回應的次數越來越多，選民開始覺得你們在迴避。";}
+        if(k>=5&&(S.silenceEvTi===undefined||S.ti-S.silenceEvTi>=6)){S.silenceEvTi=S.ti;S.queue.push({ti:S.ti+1,id:"silentLabel"});}
+      } else if(list.some(isPass)) S.silence=Math.max(0,(S.silence||0)-.5);
+    }
+    if(c.silence!==undefined)S.silence=Math.max(0,(S.silence||0)+c.silence);
+    addLog(`${ev.title}：${timeout?"時間到，":""}${disp(c.t)}${msg?"。"+msg:""}${vnote?"（"+vnote+"）":""}`);
+    openCard(`<span class="tag ${ev.tag}">${tagName(ev.tag)}</span><h3 id="ctitle">${esc(ev.title)}</h3>${timeout?'<p><b style="color:var(--alert)">時間到，團隊沒有做出決定。</b></p>':""}<p><b>${esc(disp(c.t))}</b></p>${msg?`<p>${esc(msg)}</p>`:""}${vnote?`<p style="color:var(--alert)"><b>${esc(vnote)}</b></p>`:""}${deltaHTML(out)||'<p class="delta">沒有立即的變化。</p>'}${c.then?'<p class="delta">這個決定之後可能還會有後續。</p>':""}<div class="choices"><button class="primary" id="cont">繼續</button></div>`);
     if(ev.actor===S.me){oppAuto(ev);renderNews();}
     $("#cont").onclick=()=>{closeCard();renderInds();renderBar();renderPlan();done();};
   };
@@ -905,8 +1095,8 @@ function income(k,t){
   X.fund+=party+don;X.lastInc={party,don,m:momentum(k)};
 }
 /* ============ AI opponent ============ */
-function aiPlan(){
-  const k=S.op,n=slotsFor(k,S.ti),day=TURNS[S.ti].k==="day";
+function aiPlan(k){
+  k=k||S.op;const n=slotsFor(k,S.ti),day=TURNS[S.ti].k==="day";
   const p={street:[0,0,0,0,0,0],rally:0,media:0,meet:0,prep:0,ads:0,digital:0,org:0};
   let left=n;
   if(!day){p.media=Math.min(2,left);left-=p.media;p.meet=Math.min(1,left);left-=p.meet;p.rally=Math.min(S.ti>T(20)?2:1,left);left-=p.rally;left=Math.max(0,left-1);}
@@ -916,7 +1106,7 @@ function aiPlan(){
   while(left>0){let r=R()*w.reduce((a,b)=>a+b,0),i=0;for(;i<5;i++){if((r-=w[i])<0)break}p.street[i]++;left--}
   const X=S.sides[k],budget=Math.min(Math.max(0,X.fund-p.rally*2),Math.max(day?1:3,(X.lastInc?X.lastInc.party+X.lastInc.don:3)*.9));
   p.ads=budget/3;p.digital=budget/3;p.org=budget/3;
-  if(S.debates.some(x=>x>=S.ti&&x<=S.ti+1))S.opPrep=(S.opPrep||40)+15;
+  if(!S._sim&&S.debates.some(x=>x>=S.ti&&x<=S.ti+1))S.opPrep=(S.opPrep||40)+15;
   return p;
 }
 function aiReact(){
@@ -925,6 +1115,7 @@ function aiReact(){
   const prob=dev>5?.55:.15;
   if(R()<prob){
     const a=pick(AI);S.aiCount++;
+    if(a===AI[0]&&R()<.35){S.aiBack=(S.aiBack||0)+1;applyFx({mid:-2},S.op);S.news.push({tag:"ai",title:"對手的攻擊失準",text:"對手日前的攻擊內容被媒體查證失準，反遭批評。"});}
     if(a.target){const best=S.dist.map((d,i)=>[i,(d.s-d.c)*sgn(S.me)]).sort((x,y)=>y[1]-x[1])[0][0];shiftDist(S.dist[best],-sgn(S.me)*1);}
     else applyFx(a.fx,S.op);
     S.news.push({tag:"ai",title:"對手動態",text:a.t});
@@ -938,19 +1129,53 @@ function startTurn(){
   S.sides.shen.pen=0;S.sides.chiang.pen=0;
   // income
   for(const k of ["shen","chiang"])income(k,t);
+  withOther(()=>{for(const k of ["shen","chiang"]){const X=S.sides[k];X.pen=0;if(S.ti<LAST)X.fund+=t.k==="week"?6:1.5;}});
   if(S.ti===0)S.news.push({tag:"rule",title:"政治獻金專戶",text:"直轄市長擬參選人的法定收受期間已經開始，但要先報監察院許可開立專戶才能收錢。專戶核准前，經費只有黨部挹注。",src:"政治獻金法：擬參選人應開立專戶，報受理申報機關（監察院）許可後始得收受政治獻金；直轄市長擬參選人自任期屆滿前八個月起至投票日前一日止可收受。"});
   if(S.ti===S.acctTi[S.me])S.news.push({tag:"rule",title:"專戶核准",text:"監察院許可專戶開立，小額捐款開始進來。之後的捐款多寡跟聲勢連動。"});
   if(S.ti===LAST)S.news.push({tag:"rule",title:"募款截止",text:"政治獻金只能收到投票日前一日，今天起不再有捐款進帳。"});
   // leave node
-  if(S.ti===T(24)&&S.me==="chiang")S.pending.push("__leave");
-  if(S.op==="chiang"&&S.ti===S.leaveTi)S.news.push({tag:"real",title:"對手請假投入選戰",text:"市長請假，由代理市長處理市政。",src:"報導曾指蔣萬安預計11月初才請假投入競選。"});
+  if(S.city==="tp"&&S.ti===T(24)&&S.me==="chiang")S.pending.push("__leave");
+  if(S.city==="tp"&&S.op==="chiang"&&S.ti===S.leaveTi)S.news.push({tag:"real",title:"對手請假投入選戰",text:"市長請假，由代理市長處理市政。",src:"報導曾指蔣萬安預計11月初才請假投入競選。"});
   // scheduled
-  for(const id in EV){const ev=EV[id];if(ev.at===S.ti&&!S.used.has(id)&&(!ev.cond||ev.cond())){
+  if(S._ocNews){S.news.push({tag:"common",title:"鄰市動態",text:S._ocNews});S._ocNews=null;}
+  if(S._poolNews){S.news.push({tag:"common",title:"共用人情池",text:S._poolNews});S._poolNews=null;}
+  for(const id in EV){const ev=EV[id];if(ev.city&&ev.city===S.oc.city&&ev.at===S.ti&&!S.used.has("oc_"+id)){S.used.add("oc_"+id);
+    withOther(()=>{for(const k of ["shen","chiang"]){const l=ev.choices&&!ev.choices.both?ev.choices[k]:null;const h=l&&l.find(c=>c.hist);if(h){if(h.flag)S.flags.add("oc_"+h.flag);applyFx(Object.assign({},h.fx,{ocShift:0}),k);}}});
+    S.news.push({tag:"real",title:"鄰市："+ev.title,text:(ev.src||"").replace(/^報導：/,"")});}}
+  if(S.ti>T(3)&&S.ti<LAST&&R()<(t.k==="week"?.15:.05)){const rows=withOther(()=>S.dist.map(d=>{const l=distLikely(d),e=randn()*3;return d.name+" "+CITY[S.city].short.chiang+Math.round(l.c-e)+"："+CITY[S.city].short.shen+Math.round(l.s+e)}));S.news.push({tag:"common",title:"鄰市隊友的內參民調",text:CITY[S.oc.city].cand[S.me]+"陣營私下分享"+CITY[S.oc.city].full+"各區內參："+rows.join("、")});}
+  for(const id in EV){const ev=EV[id];if(ev.at===S.ti&&!S.used.has(id)&&(!ev.city||ev.city===S.city)&&(!ev.cond||ev.cond())){
     S.used.add(id);if(ev.actor!==S.me)oppAuto(ev);
     const mine=choicesFor(ev,S.me);
     if(mine&&mine.length)S.pending.push(id);
     else S.news.push({tag:ev.tag,title:ev.title,text:txt(ev.text),src:ev.src});
   }}
+  // 重大事件：城市天坑（五項條件同時成立才有機會觸發，一局最多一次）
+  if(!S.bsDone&&S.ti<LAST){
+    const sh=S.shStreet||[];let site=-1,best=0;
+    for(let i=0;i<6;i++){const v=sh.reduce((a,r)=>a+(r[i]||0),0);if(v>=4&&v>best){best=v;site=i;}}
+    const cs=[S.flags.has("infraWeak"),S.ti>=T(18)&&S.ti<=D(11,22),(S.agStreak||0)>=3,S.sides.chiang.mid<52,site>=0];
+    const met=cs.filter(Boolean).length;S.bsMax=Math.max(S.bsMax||0,met);
+    if(met===5&&R()<.3){
+      S.bsDone=true;S.bsSite=site;
+      S.dist.forEach((d,i)=>{const x=Math.min(i===site?13:10,d.c-5);d.c-=x;d.s+=x*.6;d.u+=x*.4;});
+      S.oc.dist.forEach(d=>{const x=Math.min(3,d.c-5);d.c-=x;d.s+=x*.6;d.u+=x*.4;});
+      S.pending.unshift("sinkhole");
+    }
+  }
+  // 重大事件：信任崩盤（兩邊都可能觸發，一局最多一次）
+  if(!S.tcDone&&S.ti<LAST){
+    S.tcMax=S.tcMax||{shen:0,chiang:0};
+    for(const k of (R()<.5?["shen","chiang"]:["chiang","shen"])){
+      const X=S.sides[k];
+      const cs=[k===S.me?(S.negBack>=1||S.flags.has("lawCase")):(S.aiBack||0)>=1, X.ant>=65, k==="shen"?(S.agStreakC||0)>=3:(S.agStreak||0)>=3, X.mor<45, S.ti>=T(18)&&S.ti<=D(11,22)];
+      const met=cs.filter(Boolean).length;S.tcMax[k]=Math.max(S.tcMax[k],met);
+      if(met===5&&R()<.3&&!S.tcDone){
+        S.tcDone=k;const ss=k==="shen";
+        for(const D of [S.dist,S.oc.dist])D.forEach(d=>{const x=Math.min(D===S.dist?10:3,(ss?d.s:d.c)-5);if(ss){d.s-=x;d.c+=x*.6;}else{d.c-=x;d.s+=x*.6;}d.u+=x*.4;});
+        S.pending.unshift("trustCrash");
+      }
+    }
+  }
   // 候選人累倒：連續過勞後有機率觸發
   if(S.ti<LAST&&(S.fatigue||0)>=3&&R()<.5){S.fatigue=0;S.pending.unshift("collapse");}
   // queued follow-ups
@@ -1002,6 +1227,7 @@ function publishPoll(){
   let s=L.s+inst.house+randn()*inst.sd,c=L.c-inst.house+randn()*inst.sd;
   s=clamp(s,5,90);c=clamp(c,5,90);let u=Math.max(2,100-s-c);const tot=s+c+u;s=s/tot*100;c=c/tot*100;u=u/tot*100;
   S.polls.push({inst:inst.name,date:md(TURNS[S.ti].st),s,c,u});S.lastPollGap=s-c;
+  withOther(()=>{const i2=INST[(S.ti+1)%INST.length],L2=likely();let s2=clamp(L2.s+i2.house+randn()*i2.sd,5,90),c2=clamp(L2.c-i2.house+randn()*i2.sd,5,90),u2=Math.max(2,100-s2-c2),t2=s2+c2+u2;S.oc.polls.push({inst:i2.name,date:md(TURNS[S.ti].st),s:s2/t2*100,c:c2/t2*100,u:u2/t2*100});});
 }
 function runPending(){
   if(!S.pending.length){
@@ -1022,13 +1248,29 @@ function applyAlloc(k,p,dt){
   bump(X,"mid",.8*p.media+.4*p.meet+1.4*Math.sqrt(p.ads));
   S.agenda=clamp(S.agenda+sgn(k)*(2*p.media+2.5*Math.sqrt(p.digital)),-100,100);
   bump(X,"ant",.6*p.rally);
-  if(k===S.me){if(TURNS[S.ti].k==="week")S.fatigue=rest<2?(S.fatigue||0)+1:Math.max(0,(S.fatigue||0)-1);else S.fatigue=rest===0?(S.fatigue||0)+.34:Math.max(0,(S.fatigue||0)-.5);}
+  if(k===S.me&&!S._sim){if(TURNS[S.ti].k==="week")S.fatigue=rest<2?(S.fatigue||0)+1:Math.max(0,(S.fatigue||0)-1);else S.fatigue=rest===0?(S.fatigue||0)+.34:Math.max(0,(S.fatigue||0)-.5);}
   const restNeed=TURNS[S.ti].k==="week"?2:0;
   bump(X,"mor",(rest>=restNeed?2.5*Math.min(rest,3):-2.5)-.1*busy);
   X.fund=Math.max(0,X.fund-(p.ads+p.digital+p.org+p.rally*2+(p.intel?3:0)));
   // morale effects on effectiveness
   const eff=(.6+X.mor/250)*(k===S.op?(S.aiBoost||1):1);
-  p.street.forEach((v,i)=>shiftDist(S.dist[i],sgn(k)*.7*v*eff*(dt<1?1.4:1)));
+  p.street.forEach((v,i)=>{const amt=sgn(k)*.7*v*eff*(dt<1?1.4:1);shiftDist(S.dist[i],amt);const tgt=S._sim?S._homeDist:S.oc.dist;(BORDER[S.city][i]||[]).forEach(j=>shiftDist(tgt[j],amt*.25));});
+}
+function simOther(dt){
+  withOther(()=>{
+    const L0=likely(),g0=L0.s-L0.c;
+    for(const k of ["shen","chiang"]){const pl=aiPlan(k);applyAlloc(k,pl,dt);}
+    {const Lh=likely(),dev=(Lh.s-Lh.c)-histGap(S.ti);S.dist.forEach(d=>shiftDist(d,-dev*.06*dt));} // AI 對 AI 的城市以史實走勢為原則
+    const drift=dt*(.02*(S.sides.shen.mid-S.sides.chiang.mid)+.012*S.agenda);
+    S.dist.forEach(d=>shiftDist(d,drift*(.8+R()*.4)));
+    const f=undecSplit();S.dist.forEach(d=>{const x=d.u*.025*dt;d.u-=x;d.s+=x*f;d.c+=x*(1-f)});
+    for(const k of ["shen","chiang"]){const X=S.sides[k];for(const key of ["mob","mid","ant"])X[key]+=(50-X[key])*.07*dt;if(X.mor<65)X.mor+=(65-X.mor)*.05*dt;}
+    S.agenda*=1-.18*dt;
+    if(R()<(dt<1?.2:.5)){const k=R()<.5?"shen":"chiang",v=(R()<.5?1:-1)*(1+R()*2);applyFx({mid:v*2,agenda:v*3},k);S._ocNews=CITY[S.city].cand[k]+"陣營"+(v>0?"本週聲勢上揚，造勢場場爆滿。":"本週出包，被媒體追著打。");}
+    const L1=likely();S.oc.trace.push(L1.s-L1.c);S.oc.dg=(L1.s-L1.c)-g0;
+  });
+  // 鄰市同黨隊友偶爾動用共用的大咖人情
+  for(const k of ["shen","chiang"])if(R()<(dt<1?.02:.06)&&S.pool[k]>0){S.pool[k]--;if(k===S.me)S._poolNews=CITY[S.oc.city].cand[k]+"陣營請出大咖站台，雙北共用的人情池少了一點。";}
 }
 function resolveTurn(){
   const t=TURNS[S.ti],dt=t.k==="week"?1:.3,p=S.plan;
@@ -1046,11 +1288,16 @@ function resolveTurn(){
   S.agenda*=1-.18*dt;
   // intel
   if(p.intel){S.intel=S.dist.map(d=>{const l=distLikely(d);const e=randn()*3;return {s:clamp(l.s+e,0,100),c:clamp(l.c-e,0,100),u:l.u}});S.intelTi=S.ti;addLog("做了一次內部民調。");}
+  {const prevG=S.trace.length?S.trace[S.trace.length-1]:CITY[S.city].startGap,Lp=likely(),dgMe=(Lp.s-Lp.c)-prevG;
+   simOther(dt);
+   // 黨勢連動：兩市的支持度變化互相外溢
+   S.oc.dist.forEach(d=>shiftDist(d,dgMe*.1));S.dist.forEach(d=>shiftDist(d,(S.oc.dg||0)*.1));}
   const L=likely();S.trace.push(L.s-L.c);
+  {const sp=S.me==="shen"?p.street:op.street;S.shStreet=(S.shStreet||[]).concat([sp.slice()]).slice(-2);S.agStreak=S.agenda>15?(S.agStreak||0)+1:0;S.agStreakC=S.agenda<-15?(S.agStreakC||0)+1:0;S.silence=Math.max(0,(S.silence||0)-(TURNS[S.ti].k==="week"?.5:.15));}
   const parts=[];const st=p.street.reduce((a,b)=>a+b,0);if(st)parts.push(`掃街${st}格`);if(p.rally)parts.push(`造勢${p.rally}`);if(p.media)parts.push(`媒體${p.media}`);if(p.meet)parts.push(`拜會${p.meet}`);if(p.prep)parts.push(`模擬辯論${p.prep}`);
   addLog("行程："+(parts.join("、")||"全休"));
   const next=()=>{S.ti++;startTurn();};
-  if(S.debates.includes(S.ti))return showDebate(next);
+  if(S.debates.includes(S.ti)){if(S.city==="nt"&&R()<.2){S.debates=S.debates.filter(x=>x!==S.ti);addLog("辯論臨時破局：主辦單位與雙方對規則談不攏，這場辯論沒辦成。");applyFx({mid:-1},leaderKey());return next();}return showDebate(next);}
   next();
 }
 
@@ -1076,8 +1323,8 @@ function showNeg(done){
   const lead=leaderKey(),opLead=lead===S.op;
   if(N.offer===null)N.offer=opLead?1:3;
   const last=S.ti===T(23);
-  const intro=N.round===1?`<p>對手陣營辯論協商開始。領先的一方通常想少辦，落後的一方想多辦。拒絕太久會被說怯戰，喊太多場會被說作秀。</p><div class="src">真實進程：沈伯洋8月呼籲協商；10/12首次協商破局；10/15敲定10/31辯論一場，第二場未有共識。</div>`:`<p>第${N.round}輪協商。</p>`;
-  const opt=k=>`<button data-k="${k}">${last&&k===1?'<span class="tag hist">史實選擇</span> ':""}${k===N.offer?"接受對方提出的":"提出"} ${k} 場</button>`;
+  const intro=N.round===1?`<p>對手陣營辯論協商開始。領先的一方通常想少辦，落後的一方想多辦。拒絕太久會被說怯戰，喊太多場會被說作秀。</p>${S.city==="tp"?'<div class="src">真實進程：沈伯洋8月呼籲協商；10/12首次協商破局；10/15敲定10/31辯論一場，第二場未有共識。</div>':'<div class="src">新北的辯論安排是遊戲推演。就算談成，也可能臨時破局。</div>'}`:`<p>第${N.round}輪協商。</p>`;
+  const opt=k=>`<button data-k="${k}">${S.city==="tp"&&last&&k===1?'<span class="tag hist">史實選擇</span> ':""}${k===N.offer?"接受對方提出的":"提出"} ${k} 場</button>`;
   openCard(`<span class="tag real">重大節點</span><h3 id="ctitle">辯論協商・第${N.round}輪${last?"（最後一輪）":""}</h3>${intro}
     <p>對手目前的提案：<b>${N.offer} 場</b>，並同意納入交叉詰問。</p>
     <div class="choices">${[1,2,3,4].map(opt).join("")}<button data-k="0">這輪先不談</button></div>`);
@@ -1143,11 +1390,11 @@ function showDebate(done){
   const step=()=>{
     if(stage>=STAGES.length)return finishDebate();
     const st=STAGES[stage];
-    openCard(`<span class="tag ${idx===1&&S.ti===T(25)?"real":"fiction"}">${idx===1&&S.ti===T(25)?"已公告行程":"虛構推演"}</span>
+    openCard(`<span class="tag ${S.city==="tp"&&idx===1&&S.ti===T(25)?"real":"fiction"}">${S.city==="tp"&&idx===1&&S.ti===T(25)?"已公告行程":"虛構推演"}</span>
       <h3 id="ctitle">第${idx}場電視辯論・${md(date)}</h3>
       <p>第${stage+1}段：<b>${st.name}</b>　你的準備度 ${Math.round(S.prep)}</p>
       <div class="debate-score">${STAGES.map((_,i)=>`<i class="${i<res.length?(res[i]>0.5?"w":res[i]<-0.5?"l":"n"):""}"></i>`).join("")}</div>
-      ${idx===1&&S.ti===T(25)?'<div class="src">真實行程：TVBS與三立合辦，10/31中午12時至下午2時，含交叉詰問與媒體提問。遊戲只模擬策略，不替候選人寫台詞。</div>':""}
+      ${S.city==="tp"&&idx===1&&S.ti===T(25)?'<div class="src">真實行程：TVBS與三立合辦，10/31中午12時至下午2時，含交叉詰問與媒體提問。遊戲只模擬策略，不替候選人寫台詞。</div>':""}
       <div class="choices">${st.opts.map((o,i)=>`<button data-i="${i}">${esc(o.t)}${o.prep&&S.prep<o.prep?"<small>準備度不足時容易出錯</small>":""}</button>`).join("")}</div>`);
     $("#card").querySelectorAll(".choices button").forEach(b=>b.onclick=()=>{
       const o=st.opts[+b.dataset.i];const vv=typeof o.v==="function"?o.v():o.v;
@@ -1179,28 +1426,31 @@ function showDebate(done){
 }
 
 /* ============ election ============ */
-function runElection(){
+function calcResult(){
   const err=randn()*4.6; // 加上未決與分區雜訊後，領先6點約三成翻盤
   const f=undecSplit(),ts=turnout("shen"),tc=turnout("chiang");
   const rows=S.dist.map(d=>{
     const e=err+randn()*1;
     const s=clamp(d.s+e,1,98),c=clamp(d.c-e,1,98),u=d.u;
-    const el=ELECTORATE*d.pop/POPSUM;
+    const el=CITY[S.city].elect*d.pop/S.dist.reduce((a,x)=>a+x.pop,0);
     const vs=el*(s/100*ts+u/100*.4*f),vc=el*(c/100*tc+u/100*.4*(1-f));
     return {name:d.name,vs,vc,rate:.75+R()*.5};
   });
   const VS=rows.reduce((a,r)=>a+r.vs,0),VC=rows.reduce((a,r)=>a+r.vc,0),valid=VS+VC;
-  const result={rows,VS,VC,valid,winner:VS>VC?"shen":"chiang",margin:(VS-VC)/valid*100,recount:Math.abs(VS-VC)/valid<.003};
-  S.result=result;
+  return {rows,VS,VC,valid,winner:VS>VC?"shen":"chiang",margin:(VS-VC)/valid*100,recount:Math.abs(VS-VC)/valid<.003};
+}
+function runElection(){
+  const result=calcResult();S.result=result;S.ocResult=withOther(()=>calcResult());
+  const rows=result.rows,CN=CITY[S.city];
   $("#game").classList.add("hidden");$("#count").classList.remove("hidden");window.scrollTo(0,0);
   let p=0;const tick=()=>{
     p=Math.min(1,p+.07+R()*.04);
     const cur=rows.map(r=>{const q=Math.min(1,p*r.rate);return {name:r.name,s:r.vs*q,c:r.vc*q,q}});
     const cs=cur.reduce((a,r)=>a+r.s,0),cc=cur.reduce((a,r)=>a+r.c,0);
-    $("#count").innerHTML=`<h1>開票中・${Math.round(p*100)}%</h1>
+    $("#count").innerHTML=`<h1>${CN.full}開票中・${Math.round(p*100)}%</h1>
       <p class="hand" style="font-size:1.2rem">${p<.3?"第一批投開票所回報。":p<.7?"各區票數陸續湧入，競總裡沒人說話。":p<1?"剩下最後幾個大票倉。":"所有投開票所完成計票。"}</p>
-      <div class="tally"><div class="big c">蔣萬安<b>${fmtN(cc)}</b>${(cc/(cs+cc||1)*100).toFixed(1)}%</div><div class="big s">沈伯洋<b>${fmtN(cs)}</b>${(cs/(cs+cc||1)*100).toFixed(1)}%</div></div>
-      <div class="tablewrap"><table class="dtab"><thead><tr><th>選區</th><th>開票進度</th><th>蔣</th><th>沈</th></tr></thead><tbody>${cur.map(r=>`<tr><td>${r.name}</td><td>${Math.round(r.q*100)}%</td><td>${fmtN(r.c)}</td><td>${fmtN(r.s)}</td></tr>`).join("")}</tbody></table></div>`;
+      <div class="tally"><div class="big c">${CN.cand.chiang}<b>${fmtN(cc)}</b>${(cc/(cs+cc||1)*100).toFixed(1)}%</div><div class="big s">${CN.cand.shen}<b>${fmtN(cs)}</b>${(cs/(cs+cc||1)*100).toFixed(1)}%</div></div>
+      <div class="tablewrap"><table class="dtab"><thead><tr><th>選區</th><th>開票進度</th><th>${CN.short.chiang}</th><th>${CN.short.shen}</th></tr></thead><tbody>${cur.map(r=>`<tr><td>${r.name}</td><td>${Math.round(r.q*100)}%</td><td>${fmtN(r.c)}</td><td>${fmtN(r.s)}</td></tr>`).join("")}</tbody></table></div>`;
     if(p<1)setTimeout(tick,matchMedia("(prefers-reduced-motion: reduce)").matches?150:900);
     else setTimeout(showEnd,1600);
   };
@@ -1215,23 +1465,27 @@ async function initCaps(){
 async function showEnd(){
   const r=S.result,won=r.winner===S.me,myMargin=r.margin*sgn(S.me);
   const valid=(Date.now()-S.startedAt)>4*60000;
-  const rec={side:S.me,win:won,margin:myMargin,hist:S.hist,alt:S.alt,neg:S.neg,at:Date.now()};
+  const rec={side:S.me,city:S.city,win:won,margin:myMargin,hist:S.hist,alt:S.alt,neg:S.neg,at:Date.now()};
   const h=store.get("war-room-history")||[];h.unshift(rec);store.set("war-room-history",h.slice(0,20));
   const traceGap=S.trace.map(v=>v);
   $("#count").classList.add("hidden");$("#end").classList.remove("hidden");window.scrollTo(0,0);
   const verdict=won?(Math.abs(r.margin)<2?"險勝。":"勝選。"):(Math.abs(r.margin)<2?"惜敗。":"落選。");
   $("#end").innerHTML=`
-    <p style="color:var(--side);font-weight:700;margin-top:24px">${SIDES[S.me].full}・操盤結果</p>
+    <p style="color:var(--side);font-weight:700;margin-top:24px">${CITY[S.city].full}・${SF(S.me)}・操盤結果</p>
     <div class="verdict hand">${verdict}</div>
-    <p>蔣萬安 ${fmtN(r.VC)} 票（${(r.VC/r.valid*100).toFixed(2)}%），沈伯洋 ${fmtN(r.VS)} 票（${(r.VS/r.valid*100).toFixed(2)}%）。你的陣營${myMargin>=0?"贏":"輸"} ${Math.abs(myMargin).toFixed(2)} 個百分點。</p>
+    <p>${CITY[S.city].cand.chiang} ${fmtN(r.VC)} 票（${(r.VC/r.valid*100).toFixed(2)}%），${CITY[S.city].cand.shen} ${fmtN(r.VS)} 票（${(r.VS/r.valid*100).toFixed(2)}%）。你的陣營${myMargin>=0?"贏":"輸"} ${Math.abs(myMargin).toFixed(2)} 個百分點。</p>
+    ${S.ocResult?(()=>{const o=S.ocResult,oc=CITY[S.oc.city];return `<p style="color:var(--muted)">鄰市・${oc.full}開票：${oc.cand.chiang} ${(o.VC/o.valid*100).toFixed(2)}%，${oc.cand.shen} ${(o.VS/o.valid*100).toFixed(2)}%，由${oc.cand[o.winner]}當選。</p>`})():""}
     ${r.recount?'<p><span class="tag rule">真實制度</span> 差距在有效票數千分之三以內，落後方可依法申請重新計票。</p>':""}
     <div class="facts">
       <div><b>${S.hist}</b>次走了史實選擇</div>
       <div><b>${S.alt}</b>次改寫了歷史</div>
       <div><b>${S.neg}</b>次負面操作${S.negBack?`，${S.negBack}次反噬`:""}</div>
+      <div><b>${S.passTotal||0}</b>次選擇不回應</div>
       <div><b>${S.aiCount}</b>次對手因你而出招</div>
       <div><b>${S.debateLog.length}</b>場辯論</div>
       ${S.timerOn?`<div><b>${S.timeouts||0}</b>次時間到沒決定</div>`:""}
+      <div><b>${S.bsDone?"已觸發":"未觸發"}</b>重大事件「城市天坑」${S.bsDone?"":`（最多同時滿足 ${S.bsMax||0}/5 個條件）`}</div>
+      <div><b>${S.tcDone?(S.tcDone===S.me?"你們觸發":"對手觸發"):"未觸發"}</b>重大事件「信任崩盤」${S.tcDone?"":`（你們最多滿足 ${(S.tcMax&&S.tcMax[S.me])||0}/5 個條件）`}</div>
     </div>
     <h2 style="margin-top:20px">隱藏的真實支持度</h2>
     <p style="color:var(--muted);font-size:.9rem;margin:.2em 0">這條線是整場選戰你看不到的真實差距（沈減蔣，投票意願加權）。點是當時發布的民調。</p>
@@ -1244,10 +1498,10 @@ async function showEnd(){
       <button class="primary" id="copy" style="background:var(--panel);color:var(--ink)">複製結局卡</button>
     </div>
     <div class="author"><span>作者</span><a href="https://www.facebook.com/NewtzuyuKaohsiung" target="_blank" rel="noopener noreferrer">臉書粉絲專頁</a><span style="color:var(--muted)">玩完有想法，歡迎來留言</span></div>
-    <div class="disclaim">本局結果是模擬，不是預測。真實的台北市長選舉在2026年11月28日由台北市民決定。</div>`;
+    <div class="disclaim">本局結果是模擬，不是預測。真實的雙北市長選舉在2026年11月28日由市民決定。</div>`;
   drawEndChart(traceGap);
   $("#again").onclick=()=>location.reload();
-  $("#copy").onclick=()=>{const t=`2026台北大洋流・台北市長選戰模擬\n我操盤${SIDES[S.me].full}，${verdict}${myMargin>=0?"贏":"輸"}${Math.abs(myMargin).toFixed(2)}個百分點\n史實選擇${S.hist}次・改寫歷史${S.alt}次・負面操作${S.neg}次\n（遊戲成績，不是民調）`;
+  $("#copy").onclick=()=>{const t=`2026雙北市長選戰模擬\n我操盤${CITY[S.city].full}${SF(S.me)}，${verdict}${myMargin>=0?"贏":"輸"}${Math.abs(myMargin).toFixed(2)}個百分點\n史實選擇${S.hist}次・改寫歷史${S.alt}次・負面操作${S.neg}次\n（遊戲成績，不是民調）`;
     (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>$("#copy").textContent="已複製",()=>$("#copy").textContent="無法複製");};
   await renderStats(rec,valid);
 }
@@ -1262,7 +1516,9 @@ function drawEndChart(trace){
   g+=`<text x="4" y="${y(0)-4}" font-size="11" fill="currentColor">零線</text>`;
   svg.innerHTML=g;
 }
-function agg(list){const o={shen:{n:0,w:0,m:0},chiang:{n:0,w:0,m:0}};list.forEach(d=>{for(const k of ["shen","chiang"])if(d[k]){o[k].n+=d[k].n||0;o[k].w+=d[k].w||0;o[k].m+=d[k].m||0;}});return o}
+const KEYS=["tp_shen","tp_chiang","nt_shen","nt_chiang"];
+function emptyAgg(){const o={};KEYS.forEach(k=>o[k]={n:0,w:0,m:0});return o}
+function agg(list){const o=emptyAgg();list.forEach(d=>{for(const k of KEYS){const v=d[k]||(k.startsWith("tp_")?d[k.slice(3)]:null);if(v){o[k].n+=v.n||0;o[k].w+=v.w||0;o[k].m+=v.m||0;}}});return o}
 async function renderStats(rec,valid){
   let all=null,note="";
   if(!DB)await initCaps();
@@ -1271,9 +1527,9 @@ async function renderStats(rec,valid){
       const id=await USER.id();
       if(id&&valid){
         const ref=DB.doc("runs/"+id);const snap=await ref.get();
-        const cur=snap.exists?JSON.parse(JSON.stringify(snap.data())):{shen:{n:0,w:0,m:0},chiang:{n:0,w:0,m:0}};
-        cur[rec.side]=cur[rec.side]||{n:0,w:0,m:0};
-        cur[rec.side].n++;if(rec.win)cur[rec.side].w++;cur[rec.side].m+=rec.margin;
+        const cur=snap.exists?JSON.parse(JSON.stringify(snap.data())):{};const key=rec.city+"_"+rec.side;
+        cur[key]=cur[key]||{n:0,w:0,m:0};
+        cur[key].n++;if(rec.win)cur[key].w++;cur[key].m+=rec.margin;
         await ref.set(cur);
       }
       const q=await DB.collection("runs").limit(1000).get();
@@ -1282,28 +1538,28 @@ async function renderStats(rec,valid){
   }
   if(!all){
     const h=store.get("war-room-history")||[];
-    all={shen:{n:0,w:0,m:0},chiang:{n:0,w:0,m:0}};h.forEach(r=>{all[r.side].n++;if(r.win)all[r.side].w++;all[r.side].m+=r.margin});
+    all=emptyAgg();h.forEach(r=>{const k=(r.city||"tp")+"_"+r.side;all[k].n++;if(r.win)all[k].w++;all[k].m+=r.margin});
     note=note||"目前環境讀不到全體玩家資料，以下只顯示這台裝置的紀錄。";
   }
   if(!valid)note+=" 本局遊玩時間太短，不計入全體統計。";
-  const row=k=>{const a=all[k];return `<tr><td>扮演${SIDES[k].full}</td><td>${a.n}</td><td>${a.w}勝 ${a.n-a.w}敗</td><td>${a.n?((a.m/a.n>=0?"贏":"輸")+Math.abs(a.m/a.n).toFixed(2)):"—"}</td></tr>`};
-  const mine=all[rec.side],avg=mine.n?mine.m/mine.n:null;
+  const row=k=>{const a=all[k],[c,sd]=k.split("_");return `<tr><td>扮演${CITY[c].name}${SF(sd,c)}</td><td>${a.n}</td><td>${a.w}勝 ${a.n-a.w}敗</td><td>${a.n?((a.m/a.n>=0?"贏":"輸")+Math.abs(a.m/a.n).toFixed(2)):"—"}</td></tr>`};
+  const mine=all[rec.city+"_"+rec.side],avg=mine.n?mine.m/mine.n:null;
   $("#stats").innerHTML=`${note?`<p style="font-size:.85rem;color:var(--muted)">${esc(note)}</p>`:""}
-    <div class="tablewrap"><table class="dtab"><thead><tr><th>陣營</th><th>局數</th><th>勝敗</th><th>平均差距（百分點）</th></tr></thead><tbody>${row("shen")}${row("chiang")}</tbody></table></div>
+    <div class="tablewrap"><table class="dtab"><thead><tr><th>陣營</th><th>局數</th><th>勝敗</th><th>平均差距（百分點）</th></tr></thead><tbody>${KEYS.map(row).join("")}</tbody></table></div>
     ${avg!==null?`<p>你這局${rec.margin>=0?"贏":"輸"} ${Math.abs(rec.margin).toFixed(2)} 個百分點，扮演同陣營的平均是${avg>=0?"贏":"輸"} ${Math.abs(avg).toFixed(2)} 個百分點，${rec.margin>avg?"比平均好":"比平均差"}。</p>`:""}`;
 }
 function renderHistory(){
   const h=store.get("war-room-history")||[];
-  $("#history").innerHTML=h.length?`<h3>這台裝置的操盤紀錄</h3>`+h.slice(0,8).map(r=>`<p>${SIDES[r.side].full}・${r.win?"勝選":"落選"}・${r.margin>=0?"贏":"輸"}${Math.abs(r.margin).toFixed(2)}個百分點・史實${r.hist}／改寫${r.alt}</p>`).join(""):`<h3>這台裝置的操盤紀錄</h3><p>還沒有紀錄。</p>`;
+  $("#history").innerHTML=h.length?`<h3>這台裝置的操盤紀錄</h3>`+h.slice(0,8).map(r=>`<p>${CITY[r.city||"tp"].name}${SF(r.side,r.city||"tp")}・${r.win?"勝選":"落選"}・${r.margin>=0?"贏":"輸"}${Math.abs(r.margin).toFixed(2)}個百分點・史實${r.hist}／改寫${r.alt}</p>`).join(""):`<h3>這台裝置的操盤紀錄</h3><p>還沒有紀錄。</p>`;
 }
 
 /* ============ wiring ============ */
 document.querySelectorAll(".go").forEach(b=>b.onclick=()=>{
-  S=newState(b.dataset.side);
+  S=newState(b.dataset.side,b.dataset.city);
   S.timerOn=!$("#timerOff").checked;
   document.body.classList.toggle("chiang",S.me==="chiang");
   $("#pick").classList.add("hidden");$("#game").classList.remove("hidden");window.scrollTo(0,0);
-  addLog(`接下${SIDES[S.me].full}的操盤。`);
+  addLog(`接下${CITY[S.city].full}${SF(S.me)}的操盤。`);
   startTurn();
 });
 document.addEventListener("click",e=>{
